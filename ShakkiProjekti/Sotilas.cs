@@ -11,7 +11,7 @@ namespace ShakkiProjekti
     {
         int SijaintiX;
         int SijaintiY;
-        bool ylitys;
+        bool Ylitys;
         Image solttu = Image.FromFile("Resources.ShakkiHeppa.png");
         int SallittuLiike;
         public Sotilas(int X, int Y)
