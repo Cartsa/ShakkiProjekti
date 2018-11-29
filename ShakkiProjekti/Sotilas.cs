@@ -21,9 +21,9 @@ namespace ShakkiProjekti
         }
     }   
 
-    class ratsu:Sotilas
-        {
+    class ratsu : Sotilas
+    {
 
-        }
+    }
 
 }
