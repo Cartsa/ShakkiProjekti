@@ -20,4 +20,10 @@ namespace ShakkiProjekti
             SijaintiY = Y;
         }
     }   
+
+    class ratsu:Sotilas
+        {
+
+        }
+
 }
