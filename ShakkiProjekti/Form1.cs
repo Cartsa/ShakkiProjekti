@@ -23,8 +23,15 @@ namespace ShakkiProjekti
         {
             foreach (Button nappi in this.Controls)
             {
-
-                button1.BackgroundImage = Solttu;
+                if(nappi.Tag != null)
+                {
+                    string tagi = Convert.ToString(nappi.Tag);
+                    List<string> puoliTagi = tagi.Split(',').ToList<string>();
+                    if (puoliTagi[1] == "2")
+                    {
+                        nappi.BackgroundImage = Solttu;
+                    }
+                }               
             }
         }
 
