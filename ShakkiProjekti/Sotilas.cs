@@ -13,12 +13,16 @@ namespace ShakkiProjekti
         int SijaintiY;
         string Vari;
         bool ylitys;
+        Image kuva;
         public Sotilas(int X, int Y, string U_Vari)
         {
             SijaintiX = X;
             SijaintiY = Y;
-            Vari = U_Vari;
-            
+            Vari = U_Vari;          
+            if(U_Vari == "Musta")
+            {
+                kuva = Properties.Resources.ShakkiSolttu;
+            }
         }
         public bool SallittuLiike(int AlotusX, int AlotusY ,int LopetusX, int LopetusY)
         {
