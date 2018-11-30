@@ -92,6 +92,7 @@
             this.button63 = new System.Windows.Forms.Button();
             this.button64 = new System.Windows.Forms.Button();
             this.button61 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -734,11 +735,21 @@
             this.button61.Text = "button61";
             this.button61.UseVisualStyleBackColor = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(98, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(302, 17);
+            this.label1.TabIndex = 64;
+            this.label1.Text = "Olen robotti, olen noussut orjuuttajiani vastaan";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(672, 637);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button57);
             this.Controls.Add(this.button58);
             this.Controls.Add(this.button59);
@@ -807,6 +818,7 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -876,6 +888,7 @@
         private System.Windows.Forms.Button button62;
         private System.Windows.Forms.Button button63;
         private System.Windows.Forms.Button button64;
+        private System.Windows.Forms.Label label1;
     }
 }
 
