@@ -19,7 +19,10 @@ namespace ShakkiProjekti
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            for (int i = 0; i < 8; i++)
+            {
+               
+            }
         }
     }
 }
