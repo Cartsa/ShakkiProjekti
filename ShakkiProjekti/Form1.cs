@@ -12,6 +12,7 @@ namespace ShakkiProjekti
 {
     public partial class Form1 : Form
     {
+        int Vuoro = 0;
         Bitmap Solttu = Properties.Resources.ShakkiSolttu;
         public Form1()
         {
@@ -20,7 +21,7 @@ namespace ShakkiProjekti
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            foreach (Button nappi in )
+            foreach (Button nappi in this.Controls)
             {
 
                 button1.BackgroundImage = Solttu;
@@ -29,8 +30,10 @@ namespace ShakkiProjekti
 
         private void button_Click(Object sender, EventArgs e)
         {
-            Button Nappi = (Button)sender;
-            
+            if (Vuoro == 0)
+            {
+                
+            }
         }
     }
 }

@@ -191,7 +191,7 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(45, 49);
             this.button9.TabIndex = 15;
-            this.button9.Tag = "1,2 + 2";
+            this.button9.Tag = "1,2";
             this.button9.Text = "button9";
             this.button9.UseVisualStyleBackColor = false;
             // 
