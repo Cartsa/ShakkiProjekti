@@ -11,19 +11,22 @@ namespace ShakkiProjekti
     {
         int SijaintiX;
         int SijaintiY;
+        string Vari;
         bool ylitys;
-        Image solttu = Image.FromFile("Resources.ShakkiHeppa.png");
-        int SallittuLiike;
-        public Sotilas(int X, int Y)
+        public Sotilas(int X, int Y, string U_Vari)
         {
             SijaintiX = X;
             SijaintiY = Y;
+            Vari = U_Vari;
+            
+        }
+        public bool SallittuLiike(int AlotusX, int AlotusY ,int LopetusX, int LopetusY)
+        {
+            if(AlotusY + 1 == LopetusY)
+            {
+
+            }
+            return true;
         }
     }   
-
-    class ratsu : Sotilas
-    {
-
-    }
-
 }
