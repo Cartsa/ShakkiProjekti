@@ -14,6 +14,7 @@ namespace ShakkiProjekti
     {
         int Vuoro = 0;
         Bitmap MustaSolttu = Properties.Resources.ShakkiSolttu;
+        Bitmap ValkoinenSolttu = Properties.Resources.ValkoinenShakkiSolttu;
         public Form1()
         {
             InitializeComponent();
@@ -30,6 +31,10 @@ namespace ShakkiProjekti
                     if (puoliTagi[1] == "2")
                     {
                         nappi.BackgroundImage = MustaSolttu;
+                    }
+                    if (puoliTagi[1] == "7")
+                    {
+                        nappi.BackgroundImage = ValkoinenSolttu;
                     }
                 }               
             }
