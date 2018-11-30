@@ -13,7 +13,7 @@ namespace ShakkiProjekti
     public partial class Form1 : Form
     {
         int Vuoro = 0;
-        Bitmap Solttu = Properties.Resources.ShakkiSolttu;
+        Bitmap MustaSolttu = Properties.Resources.ShakkiSolttu;
         public Form1()
         {
             InitializeComponent();
@@ -29,7 +29,7 @@ namespace ShakkiProjekti
                     List<string> puoliTagi = tagi.Split(',').ToList<string>();
                     if (puoliTagi[1] == "2")
                     {
-                        nappi.BackgroundImage = Solttu;
+                        nappi.BackgroundImage = MustaSolttu;
                     }
                 }               
             }
