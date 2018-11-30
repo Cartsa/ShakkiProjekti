@@ -20,10 +20,10 @@ namespace ShakkiProjekti
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            foreach (Button nappi in )
+            foreach (Button nappi in this.Controls)
             {
 
-                button1.BackgroundImage = Solttu;
+                nappi.BackgroundImage = Solttu;
             }
         }
 
