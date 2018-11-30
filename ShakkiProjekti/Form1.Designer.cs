@@ -77,7 +77,6 @@
             this.button47 = new System.Windows.Forms.Button();
             this.button48 = new System.Windows.Forms.Button();
             this.button49 = new System.Windows.Forms.Button();
-            this.button50 = new System.Windows.Forms.Button();
             this.button51 = new System.Windows.Forms.Button();
             this.button52 = new System.Windows.Forms.Button();
             this.button53 = new System.Windows.Forms.Button();
@@ -92,6 +91,7 @@
             this.button63 = new System.Windows.Forms.Button();
             this.button64 = new System.Windows.Forms.Button();
             this.button61 = new System.Windows.Forms.Button();
+            this.button50 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -546,6 +546,7 @@
             // button41
             // 
             this.button41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(99)))));
+            this.button41.Image = global::ShakkiProjekti.Properties.Resources.ValkoinenShakkiSolttu1;
             this.button41.Location = new System.Drawing.Point(76, 399);
             this.button41.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button41.Name = "button41";
@@ -641,17 +642,6 @@
             this.button49.TabIndex = 55;
             this.button49.Text = "button49";
             this.button49.UseVisualStyleBackColor = false;
-            // 
-            // button50
-            // 
-            this.button50.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(99)))));
-            this.button50.Location = new System.Drawing.Point(141, 465);
-            this.button50.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button50.Name = "button50";
-            this.button50.Size = new System.Drawing.Size(60, 60);
-            this.button50.TabIndex = 54;
-            this.button50.Text = "button50";
-            this.button50.UseVisualStyleBackColor = false;
             // 
             // button51
             // 
@@ -806,6 +796,17 @@
             this.button61.TabIndex = 59;
             this.button61.Text = "button61";
             this.button61.UseVisualStyleBackColor = false;
+            // 
+            // button50
+            // 
+            this.button50.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(99)))));
+            this.button50.Location = new System.Drawing.Point(141, 465);
+            this.button50.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button50.Name = "button50";
+            this.button50.Size = new System.Drawing.Size(60, 60);
+            this.button50.TabIndex = 54;
+            this.button50.Text = "button50";
+            this.button50.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
