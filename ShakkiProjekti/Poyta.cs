@@ -26,6 +26,6 @@ namespace ShakkiProjekti
         Sotilas mSolttu7 = new Sotilas(7, 2, "Musta");
         Sotilas mSolttu8 = new Sotilas(8, 2, "Musta");
 
-
+        
     }
 }
