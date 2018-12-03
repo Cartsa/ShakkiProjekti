@@ -26,6 +26,10 @@ namespace ShakkiProjekti
         Sotilas mSolttu7 = new Sotilas(7, 2, "Musta");
         Sotilas mSolttu8 = new Sotilas(8, 2, "Musta");
 
-        
+        Hevonen vHeppa1 = new Hevonen(2, 8, "Valkoinen");
+        Hevonen vHeppa2 = new Hevonen(7, 8, "Valkoinen");
+
+        Hevonen mHeppa1 = new Hevonen(2, 1, "Musta");
+        Hevonen mHeppa2 = new Hevonen(7, 1, "Musta");
     }
 }

@@ -15,6 +15,7 @@ namespace ShakkiProjekti
         int Vuoro = 0;
         Bitmap MustaSolttu = Properties.Resources.ShakkiSolttu;
         Bitmap ValkoinenSolttu = Properties.Resources.ValkoinenShakkiSolttu;
+        Bitmap MustaHeppa = Properties.Resources.ShakkiHeppa;
         public Form1()
         {
             InitializeComponent();

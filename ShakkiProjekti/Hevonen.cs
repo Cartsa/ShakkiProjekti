@@ -7,27 +7,26 @@ using System.Drawing;
 
 namespace ShakkiProjekti
 {
-    class Sotilas
+    class Hevonen
     {
         int SijaintiX;
         int SijaintiY;
         string Vari;
         bool Ylitys;
-        Image kuva;
-        public Sotilas(int X, int Y, string U_Vari)
+        Image Kuva;
+        public Hevonen(int X, int Y, string U_Vari)
         {
             SijaintiX = X;
             SijaintiY = Y;
-            Vari = U_Vari;          
-            if(U_Vari == "Musta")
+            Vari = U_Vari;
+            if (U_Vari == "Musta")
             {
-                kuva = Properties.Resources.ShakkiSolttu;
+                Kuva = Properties.Resources.ShakkiHeppa;
             }
         }
-
-        public bool SallittuLiike(int AlotusX, int AlotusY ,int LopetusX, int LopetusY)
+        public bool SallittuLiike(int AlotusX, int AlotusY, int LopetusX, int LopetusY)
         {
-            if(Vari == "Musta")
+            if (Vari == "Musta")
             {
                 if (AlotusY + 1 == LopetusY)
                 {
@@ -54,5 +53,5 @@ namespace ShakkiProjekti
                 return false;
             }
         }
-    }   
+    }
 }
