@@ -92,7 +92,11 @@
     <None Include="Resources\ValkoinenShakkiSolttu.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ValkoHeppa.png" />
+    <None Include="Resources\ValkoinenShakkiHeppa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\ValkoinenShakkiTorni.png" />
+    <Content Include="Resources\ShakkiTorni.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
