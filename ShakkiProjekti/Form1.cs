@@ -27,17 +27,45 @@ namespace ShakkiProjekti
             {
                     string tagi = Convert.ToString(nappi.Tag);
                     List<string> puoliTagi = tagi.Split(',').ToList<string>();
+
+                    //Hepat
+                    if (tagi == "2,1")
+                    {
+                    nappi.BackgroundImage = MustaHeppa;
+                    string fag = nappi.Tag.ToString();
+                    nappi.Tag = fag + ",MHeppa";
+                    }
+                    if (tagi == "7,1")
+                    {
+                        nappi.BackgroundImage = MustaHeppa;
+                        string fag = nappi.Tag.ToString();
+                        nappi.Tag = fag + ",MHeppa";
+                    }
+                    if (tagi == "2,8")
+                    {
+                        nappi.BackgroundImage = MustaHeppa;
+                        string fag = nappi.Tag.ToString();
+                        nappi.Tag = fag + ",VHeppa";
+                    }
+                    if (tagi == "2,8")
+                    {
+                        nappi.BackgroundImage = MustaHeppa;
+                        string fag = nappi.Tag.ToString();
+                        nappi.Tag = fag + ",VHeppa";
+                    }
+
+                    //Soltut
                     if (puoliTagi[1] == "2")
                     {
-                        string tagert = nappi.Tag.ToString();
                         nappi.BackgroundImage = MustaSolttu;
-                        nappi.Tag = tagert + ",MSolttu";
+                        string fag = nappi.Tag.ToString();
+                        nappi.Tag = fag + ",MSolttu";
                     }
                     if (puoliTagi[1] == "7")
                     {
                         nappi.BackgroundImage = ValkoinenSolttu;
-                        string tagert = nappi.Tag.ToString();
-                        nappi.Tag = tagert + ",VSolttu";
+                        string fag = nappi.Tag.ToString();
+                        nappi.Tag = fag + ",VSolttu";
                     }               
             }
         }
