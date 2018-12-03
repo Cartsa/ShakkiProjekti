@@ -25,19 +25,20 @@ namespace ShakkiProjekti
         {
             foreach (Button nappi in this.Controls)
             {
-                if(nappi.Tag != null)
-                {
                     string tagi = Convert.ToString(nappi.Tag);
                     List<string> puoliTagi = tagi.Split(',').ToList<string>();
                     if (puoliTagi[1] == "2")
                     {
+                        string tagert = nappi.Tag.ToString();
                         nappi.BackgroundImage = MustaSolttu;
+                        nappi.Tag = tagert + ",MSolttu";
                     }
                     if (puoliTagi[1] == "7")
                     {
                         nappi.BackgroundImage = ValkoinenSolttu;
-                    }
-                }               
+                        string tagert = nappi.Tag.ToString();
+                        nappi.Tag = tagert + ",VSolttu";
+                    }               
             }
         }
 
@@ -45,7 +46,13 @@ namespace ShakkiProjekti
         {
             if (Vuoro == 0)
             {
-                
+                Button nappi = (Button)sender;
+                string NappiTagi = nappi.Tag.ToString();
+                List<string> puoliTagi = NappiTagi.Split(',').ToList<string>();
+                if (puoliTagi[2] == "VSolttu")
+                {
+
+                }               
             }
         }
     }
