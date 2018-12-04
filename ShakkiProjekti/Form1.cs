@@ -18,6 +18,7 @@ namespace ShakkiProjekti
         Bitmap MustaSolttu = Properties.Resources.ShakkiSolttu;
         Bitmap ValkoinenSolttu = Properties.Resources.ValkoinenShakkiSolttu;
         Bitmap MustaHeppa = Properties.Resources.ShakkiHeppa;
+        Bitmap ValkoinenHeppa = Properties.Resources.ValkoinenShakkiHeppas;
         public Form1()
         {
             InitializeComponent();
@@ -45,13 +46,13 @@ namespace ShakkiProjekti
                     }
                     if (tagi == "2,8")
                     {
-                        nappi.BackgroundImage = MustaHeppa;
+                        nappi.BackgroundImage = ValkoinenHeppa;
                         string fag = nappi.Tag.ToString();
                         nappi.Tag = fag + ",VHeppa";
                     }
-                    if (tagi == "2,8")
+                    if (tagi == "7,8")
                     {
-                        nappi.BackgroundImage = MustaHeppa;
+                        nappi.BackgroundImage = ValkoinenHeppa;
                         string fag = nappi.Tag.ToString();
                         nappi.Tag = fag + ",VHeppa";
                     }
