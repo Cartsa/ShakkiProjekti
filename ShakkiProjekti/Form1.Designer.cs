@@ -83,7 +83,6 @@
             this.button54 = new System.Windows.Forms.Button();
             this.button55 = new System.Windows.Forms.Button();
             this.button56 = new System.Windows.Forms.Button();
-            this.button59 = new System.Windows.Forms.Button();
             this.button60 = new System.Windows.Forms.Button();
             this.button62 = new System.Windows.Forms.Button();
             this.button63 = new System.Windows.Forms.Button();
@@ -92,6 +91,7 @@
             this.button50 = new System.Windows.Forms.Button();
             this.button58 = new System.Windows.Forms.Button();
             this.button57 = new System.Windows.Forms.Button();
+            this.button59 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -754,18 +754,6 @@
             this.button56.UseVisualStyleBackColor = false;
             this.button56.Click += new System.EventHandler(this.button_Click);
             // 
-            // button59
-            // 
-            this.button59.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(99)))));
-            this.button59.Location = new System.Drawing.Point(156, 431);
-            this.button59.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button59.Name = "button59";
-            this.button59.Size = new System.Drawing.Size(45, 49);
-            this.button59.TabIndex = 61;
-            this.button59.Tag = "3,8";
-            this.button59.UseVisualStyleBackColor = false;
-            this.button59.Click += new System.EventHandler(this.button_Click);
-            // 
             // button60
             // 
             this.button60.BackColor = System.Drawing.Color.White;
@@ -861,6 +849,18 @@
             this.button57.Tag = "1,8";
             this.button57.UseVisualStyleBackColor = false;
             this.button57.Click += new System.EventHandler(this.button_Click);
+            // 
+            // button59
+            // 
+            this.button59.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(99)))));
+            this.button59.Location = new System.Drawing.Point(156, 431);
+            this.button59.Margin = new System.Windows.Forms.Padding(2);
+            this.button59.Name = "button59";
+            this.button59.Size = new System.Drawing.Size(45, 49);
+            this.button59.TabIndex = 61;
+            this.button59.Tag = "3,8";
+            this.button59.UseVisualStyleBackColor = false;
+            this.button59.Click += new System.EventHandler(this.button_Click);
             // 
             // Form1
             // 
