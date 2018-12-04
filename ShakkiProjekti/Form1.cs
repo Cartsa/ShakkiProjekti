@@ -135,11 +135,15 @@ namespace ShakkiProjekti
             if (Vuoro == 0)
             {
                 Button nappi = (Button)sender;
+                string NappiTagi = nappi.Tag.ToString();
+                List<string> puoliTagi = NappiTagi.Split(',').ToList<string>();
                 if (Valittu == 0)
                 {
                     klikattuNappi = (Button)sender;
-                    string NappiTagi = nappi.Tag.ToString();
-                    List<string> puoliTagi = NappiTagi.Split(',').ToList<string>();
+                    if (puoliTagi[2] == "EiNappia")
+                    {
+                        return;
+                    }
                     if (puoliTagi[2] == "VSolttu")
                     {
                         ValittuNappi = "VSolttu";
@@ -167,8 +171,8 @@ namespace ShakkiProjekti
                     {
                         nappi.Image = ValkoinenSolttu;
                         string fag = nappi.Tag.ToString();
-                        List<string> ValittupuoliTagi = fag.Split(',').ToList<string>();
-                        klikattuNappi.Tag = ValittupuoliTagi[0] + "," + ValittupuoliTagi[1] + "," + "VSolttu";
+                        List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
+                        nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "VSolttu";
                     }
                     foreach(Button clear in this.Controls)
                     {
