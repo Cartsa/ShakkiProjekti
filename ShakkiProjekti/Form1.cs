@@ -119,6 +119,9 @@ namespace ShakkiProjekti
                         clear.BackgroundImage = null;
                     }
                     klikattuNappi.Image = null;
+                    string nappitagi = klikattuNappi.Tag.ToString();
+                    List<string> nappipuoliTagi = nappitagi.Split(',').ToList<string>();
+                    klikattuNappi.Tag = nappipuoliTagi[0] + "," + nappipuoliTagi[1] + "," + "EiNappia";
                     Valittu = 0;
                 }
             }
