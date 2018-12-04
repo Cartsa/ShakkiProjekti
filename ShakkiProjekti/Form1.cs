@@ -15,6 +15,7 @@ namespace ShakkiProjekti
         int Vuoro = 0;
         int Valittu = 0;
         string ValittuNappi;
+        Button klikattuNappi;
         Bitmap MustaSolttu = Properties.Resources.ShakkiSolttu;
         Bitmap ValkoinenSolttu = Properties.Resources.ValkoinenShakkiSolttu;
         Bitmap MustaHeppa = Properties.Resources.ShakkiHeppa;
@@ -34,25 +35,25 @@ namespace ShakkiProjekti
                     //Hepat
                     if (tagi == "2,1")
                     {
-                    nappi.BackgroundImage = MustaHeppa;
+                    nappi.Image = MustaHeppa;
                     string fag = nappi.Tag.ToString();
                     nappi.Tag = fag + ",MHeppa";
                     }
                     if (tagi == "7,1")
                     {
-                        nappi.BackgroundImage = MustaHeppa;
+                        nappi.Image = MustaHeppa;
                         string fag = nappi.Tag.ToString();
                         nappi.Tag = fag + ",MHeppa";
                     }
                     if (tagi == "2,8")
                     {
-                        nappi.BackgroundImage = ValkoinenHeppa;
+                        nappi.Image = ValkoinenHeppa;
                         string fag = nappi.Tag.ToString();
                         nappi.Tag = fag + ",VHeppa";
                     }
                     if (tagi == "7,8")
                     {
-                        nappi.BackgroundImage = ValkoinenHeppa;
+                        nappi.Image = ValkoinenHeppa;
                         string fag = nappi.Tag.ToString();
                         nappi.Tag = fag + ",VHeppa";
                     }
@@ -60,14 +61,14 @@ namespace ShakkiProjekti
                     //Soltut
                     if (puoliTagi[1] == "2")
                     {
-                        nappi.BackgroundImage = MustaSolttu;
-                        string fag = nappi.Tag.ToString();
+                        nappi.Image = MustaSolttu;
+                        string fag = puoliTagi[0] + "," + puoliTagi[1];
                         nappi.Tag = fag + ",MSolttu";
                     }
                     if (puoliTagi[1] == "7")
                     {
-                        nappi.BackgroundImage = ValkoinenSolttu;
-                        string fag = nappi.Tag.ToString();
+                        nappi.Image = ValkoinenSolttu;
+                        string fag = puoliTagi[0] + ","  + puoliTagi[1];
                         nappi.Tag = fag + ",VSolttu";
                     }               
             }
@@ -80,11 +81,12 @@ namespace ShakkiProjekti
                 Button nappi = (Button)sender;
                 if (Valittu == 0)
                 {
+                    klikattuNappi = (Button)sender;
                     string NappiTagi = nappi.Tag.ToString();
                     List<string> puoliTagi = NappiTagi.Split(',').ToList<string>();
                     if (puoliTagi[2] == "VSolttu")
                     {
-                        ValittuNappi = "Solttu";
+                        ValittuNappi = "VSolttu";
                         Sotilas solttu = new Sotilas(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), "Valkoinen");
                         foreach (Button ruutu in this.Controls)
                         {
@@ -92,7 +94,7 @@ namespace ShakkiProjekti
                             List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
                             if (solttu.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])))
                             {
-                                ruutu.BackColor = Color.Green;
+                                ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
                             }
                             else
                             {
@@ -103,18 +105,20 @@ namespace ShakkiProjekti
                     }
                     Valittu = 1;
                 }
-                if(Valittu == 1)
+                else if(Valittu == 1)
                 {
-                    if(ValittuNappi == "Solttu")
+                    if(ValittuNappi == "VSolttu")
                     {
-                        nappi.BackgroundImage = MustaSolttu;
+                        nappi.Image = ValkoinenSolttu;
                         string fag = nappi.Tag.ToString();
-                        nappi.Tag = fag + ",MSolttu";
+                        nappi.Tag = fag + ",VSolttu";
                     }
                     foreach(Button clear in this.Controls)
                     {
                         clear.Enabled = true;
+                        clear.BackgroundImage = null;
                     }
+                    klikattuNappi.Image = null;
                     Valittu = 0;
                 }
             }
