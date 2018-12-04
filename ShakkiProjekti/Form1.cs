@@ -80,7 +80,16 @@ namespace ShakkiProjekti
                 List<string> puoliTagi = NappiTagi.Split(',').ToList<string>();
                 if (puoliTagi[2] == "VSolttu")
                 {
-
+                    Sotilas solttu = new Sotilas(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]),"Valkoinen");
+                    foreach(Button ruutu in this.Controls)
+                    {
+                        string ruutuTagi = ruutu.Tag.ToString();
+                        List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
+                        if (solttu.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]),Convert.ToInt32(RuutupuoliTagi[0]),Convert.ToInt32(RuutupuoliTagi[1])))
+                        {
+                            ruutu.BackColor = Color.Green;
+                        }
+                    }
                 }               
             }
         }
