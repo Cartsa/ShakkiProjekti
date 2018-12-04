@@ -13,6 +13,8 @@ namespace ShakkiProjekti
     public partial class Form1 : Form
     {
         int Vuoro = 0;
+        int Valittu = 0;
+        string ValittuNappi;
         Bitmap MustaSolttu = Properties.Resources.ShakkiSolttu;
         Bitmap ValkoinenSolttu = Properties.Resources.ValkoinenShakkiSolttu;
         Bitmap MustaHeppa = Properties.Resources.ShakkiHeppa;
@@ -75,21 +77,45 @@ namespace ShakkiProjekti
             if (Vuoro == 0)
             {
                 Button nappi = (Button)sender;
-                string NappiTagi = nappi.Tag.ToString();
-                List<string> puoliTagi = NappiTagi.Split(',').ToList<string>();
-                if (puoliTagi[2] == "VSolttu")
+                if (Valittu == 0)
                 {
-                    Sotilas solttu = new Sotilas(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]),"Valkoinen");
-                    foreach(Button ruutu in this.Controls)
+                    string NappiTagi = nappi.Tag.ToString();
+                    List<string> puoliTagi = NappiTagi.Split(',').ToList<string>();
+                    if (puoliTagi[2] == "VSolttu")
                     {
-                        string ruutuTagi = ruutu.Tag.ToString();
-                        List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
-                        if (solttu.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]),Convert.ToInt32(RuutupuoliTagi[0]),Convert.ToInt32(RuutupuoliTagi[1])))
+                        ValittuNappi = "Solttu";
+                        Sotilas solttu = new Sotilas(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), "Valkoinen");
+                        foreach (Button ruutu in this.Controls)
                         {
-                            ruutu.BackColor = Color.Green;
+                            string ruutuTagi = ruutu.Tag.ToString();
+                            List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
+                            if (solttu.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])))
+                            {
+                                ruutu.BackColor = Color.Green;
+                            }
+                            else
+                            {
+                                ruutu.Enabled = false;
+                                nappi.Enabled = true;
+                            }
                         }
                     }
-                }               
+                    Valittu = 1;
+                }
+                if(Valittu == 1)
+                {
+                    if(ValittuNappi == "Solttu")
+                    {
+                        nappi.BackgroundImage = MustaSolttu;
+                        string fag = nappi.Tag.ToString();
+                        nappi.Tag = fag + ",MSolttu";
+                    }
+                    foreach(Button clear in this.Controls)
+                    {
+                        clear.Enabled = true;
+                    }
+                    Valittu = 0;
+                }
             }
         }
     }
