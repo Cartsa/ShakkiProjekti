@@ -20,6 +20,10 @@ namespace ShakkiProjekti
         Bitmap ValkoinenSolttu = Properties.Resources.ValkoinenShakkiSolttu;
         Bitmap MustaHeppa = Properties.Resources.ShakkiHeppa;
         Bitmap ValkoinenHeppa = Properties.Resources.ValkoinenShakkiHeppas;
+        Bitmap MustaTorni = Properties.Resources.ShakkiTorni;
+        Bitmap ValkoinenTorni = Properties.Resources.ValkoinenShakkiTorni;
+        Bitmap MustaLahetti = Properties.Resources.ShakkiLahetti;
+        Bitmap ValkoinenLahetti = Properties.Resources.ValkoinenShakkiLahetti;
         public Form1()
         {
             InitializeComponent();
@@ -31,6 +35,20 @@ namespace ShakkiProjekti
             {
                     string tagi = Convert.ToString(nappi.Tag);
                     List<string> puoliTagi = tagi.Split(',').ToList<string>();
+
+                    //Soltut
+                    if (puoliTagi[1] == "2")
+                    {
+                        nappi.Image = MustaSolttu;
+                        string fag = puoliTagi[0] + "," + puoliTagi[1];
+                        nappi.Tag = fag + ",MSolttu";
+                    }
+                    if (puoliTagi[1] == "7")
+                    {
+                        nappi.Image = ValkoinenSolttu;
+                        string fag = puoliTagi[0] + "," + puoliTagi[1];
+                        nappi.Tag = fag + ",VSolttu";
+                    }
 
                     //Hepat
                     if (tagi == "2,1")
@@ -58,19 +76,57 @@ namespace ShakkiProjekti
                         nappi.Tag = fag + ",VHeppa";
                     }
 
-                    //Soltut
-                    if (puoliTagi[1] == "2")
+                    //Tornit
+                    if (tagi == "1,1")
                     {
-                        nappi.Image = MustaSolttu;
-                        string fag = puoliTagi[0] + "," + puoliTagi[1];
-                        nappi.Tag = fag + ",MSolttu";
+                        nappi.Image = MustaTorni;
+                        string fag = nappi.Tag.ToString();
+                        nappi.Tag = fag + ",MTorni";
                     }
-                    if (puoliTagi[1] == "7")
+                    if (tagi == "8,1")
                     {
-                        nappi.Image = ValkoinenSolttu;
-                        string fag = puoliTagi[0] + ","  + puoliTagi[1];
-                        nappi.Tag = fag + ",VSolttu";
-                    }               
+                        nappi.Image = MustaTorni;
+                        string fag = nappi.Tag.ToString();
+                        nappi.Tag = fag + ",MTorni";
+                    }
+                    if (tagi == "1,8")
+                    {
+                        nappi.Image = ValkoinenTorni;
+                        string fag = nappi.Tag.ToString();
+                        nappi.Tag = fag + ",VTorni";
+                    }
+                    if (tagi == "8,8")
+                    {
+                        nappi.Image = ValkoinenTorni;
+                        string fag = nappi.Tag.ToString();
+                        nappi.Tag = fag + ",VTorni";
+                    }
+
+                    //Lähetit
+                    if (tagi == "3,1")
+                    {
+                        nappi.Image = MustaLahetti;
+                        string fag = nappi.Tag.ToString();
+                        nappi.Tag = fag + ",MLahetti";
+                    }
+                    if (tagi == "6,1")
+                    {
+                        nappi.Image = MustaLahetti;
+                        string fag = nappi.Tag.ToString();
+                        nappi.Tag = fag + ",MLahetti";
+                    }
+                    if (tagi == "3,8")
+                    {
+                        nappi.Image = ValkoinenLahetti;
+                        string fag = nappi.Tag.ToString();
+                        nappi.Tag = fag + ",VLahetti";
+                    }
+                    if (tagi == "6,8")
+                    {
+                        nappi.Image = ValkoinenLahetti;
+                        string fag = nappi.Tag.ToString();
+                        nappi.Tag = fag + ",VLahetti";
+                    }
             }
         }
 

@@ -43,5 +43,13 @@ namespace ShakkiProjekti
         //Mustat tornit
         Torni mTorni1 = new Torni(1, 1, "Musta");
         Torni mTorni2 = new Torni(8, 1, "Musta");
+
+        //Valkoiset lähetit
+        Torni vLahetti1 = new Torni(3, 8, "Valkoinen");
+        Torni vLahetti2 = new Torni(6, 8, "Valkoinen");
+
+        //Mustat lähetit
+        Torni mLahetti1 = new Torni(3, 1, "Musta");
+        Torni mLahetti2 = new Torni(6, 1, "Musta");
     }
 }
