@@ -163,6 +163,25 @@ namespace ShakkiProjekti
                             }
                         }
                     }
+                    if (puoliTagi[2] == "MSolttu")
+                    {
+                        ValittuNappi = "MSolttu";
+                        Sotilas solttu = new Sotilas(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), "Musta");
+                        foreach (Button ruutu in this.Controls)
+                        {
+                            string ruutuTagi = ruutu.Tag.ToString();
+                            List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
+                            if (solttu.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])))
+                            {
+                                ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
+                            }
+                            else
+                            {
+                                ruutu.Enabled = false;
+                                nappi.Enabled = true;
+                            }
+                        }
+                    }
                     Valittu = 1;
                 }
                 else if(Valittu == 1)
@@ -174,7 +193,14 @@ namespace ShakkiProjekti
                         List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
                         nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "VSolttu";
                     }
-                    foreach(Button clear in this.Controls)
+                    if (ValittuNappi == "MSolttu")
+                    {
+                        nappi.Image = MustaSolttu;
+                        string fag = nappi.Tag.ToString();
+                        List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
+                        nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "MSolttu";
+                    }
+                    foreach (Button clear in this.Controls)
                     {
                         clear.Enabled = true;
                         clear.BackgroundImage = null;

@@ -32,7 +32,11 @@ namespace ShakkiProjekti
         {
             if(Vari == "Musta")
             {
-                if (AlotusY + 1 == LopetusY && AlotusX == LopetusX)
+                if (AlotusY == 7 && AlotusX == LopetusX && AlotusY + 2 == LopetusY)
+                {
+                    return true;
+                }
+                else if (AlotusY + 1 == LopetusY && AlotusX == LopetusX)
                 {
                     return true;
                 }
