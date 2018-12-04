@@ -63,26 +63,6 @@ namespace ShakkiProjekti.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Lahetti {
-            get {
-                object obj = ResourceManager.GetObject("Lahetti", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pip {
-            get {
-                object obj = ResourceManager.GetObject("pip", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap ShakkiHeppa {
             get {
                 object obj = ResourceManager.GetObject("ShakkiHeppa", resourceCulture);
@@ -93,29 +73,9 @@ namespace ShakkiProjekti.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ShakkiHeppa1 {
-            get {
-                object obj = ResourceManager.GetObject("ShakkiHeppa1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap ShakkiSolttu {
             get {
                 object obj = ResourceManager.GetObject("ShakkiSolttu", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ShakkiSolttu1 {
-            get {
-                object obj = ResourceManager.GetObject("ShakkiSolttu1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
