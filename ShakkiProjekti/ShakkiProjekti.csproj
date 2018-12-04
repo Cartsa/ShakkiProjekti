@@ -94,6 +94,7 @@
     <None Include="Resources\ValkoinenShakkiSolttu.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\VihreaNappi.png" />
     <None Include="Resources\ValkoinenShakkiHeppas.png" />
     <None Include="Resources\ShakkiLahetti.png" />
     <None Include="Resources\ValkoinenShakkiLahetti.png" />
