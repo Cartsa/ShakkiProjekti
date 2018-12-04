@@ -73,6 +73,16 @@ namespace ShakkiProjekti.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ShakkiLahetti {
+            get {
+                object obj = ResourceManager.GetObject("ShakkiLahetti", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ShakkiSolttu {
             get {
                 object obj = ResourceManager.GetObject("ShakkiSolttu", resourceCulture);
@@ -96,6 +106,16 @@ namespace ShakkiProjekti.Properties {
         internal static System.Drawing.Bitmap ValkoinenShakkiHeppas {
             get {
                 object obj = ResourceManager.GetObject("ValkoinenShakkiHeppas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ValkoinenShakkiLahetti {
+            get {
+                object obj = ResourceManager.GetObject("ValkoinenShakkiLahetti", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
