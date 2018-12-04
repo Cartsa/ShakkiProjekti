@@ -167,7 +167,8 @@ namespace ShakkiProjekti
                     {
                         nappi.Image = ValkoinenSolttu;
                         string fag = nappi.Tag.ToString();
-                        nappi.Tag = fag + ",VSolttu";
+                        List<string> ValittupuoliTagi = fag.Split(',').ToList<string>();
+                        klikattuNappi.Tag = ValittupuoliTagi[0] + "," + ValittupuoliTagi[1] + "," + "VSolttu";
                     }
                     foreach(Button clear in this.Controls)
                     {
