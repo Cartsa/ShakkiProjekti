@@ -35,7 +35,7 @@ namespace ShakkiProjekti
             {
                 if(AlotusY == 2)
                 {
-                    if(AlotusY + 3 > LopetusY && AlotusX == LopetusX)
+                    if(AlotusY + 3 > LopetusY && AlotusX == LopetusX && LopetusY > AlotusY)
                     {
                         return true;
                     }
@@ -57,7 +57,7 @@ namespace ShakkiProjekti
             {
                 if (AlotusY == 7)
                 {
-                    if (AlotusY - 3 < LopetusY && AlotusX == LopetusX)
+                    if (AlotusY - 3 < LopetusY && AlotusX == LopetusX && LopetusY < AlotusY)
                     {
                         return true;
                     }
