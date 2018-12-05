@@ -7,17 +7,16 @@ using System.Drawing;
 
 namespace ShakkiProjekti
 {
-    class Lahetti : Nappula
+    class Kuningas : Nappula
     {
-
-        public Lahetti(int X, int Y, string U_Vari)
+        public Kuningas(int X, int Y, string U_Vari)
         {
             SijaintiX1 = X;
             SijaintiY1 = Y;
             Vari = U_Vari;
             if (U_Vari == "Musta")
             {
-                Kuva = Properties.Resources.ShakkiLahetti;
+                Kuva = Properties.Resources.ShakkiKunkku;
             }
         }
 

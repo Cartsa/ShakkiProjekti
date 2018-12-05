@@ -53,7 +53,10 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Hevonen.cs" />
+    <Compile Include="Kuningas.cs" />
+    <Compile Include="Kuningatar.cs" />
     <Compile Include="Lahetti.cs" />
+    <Compile Include="Nappula.cs" />
     <Compile Include="Poyta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -99,6 +102,10 @@
     <None Include="Resources\ValkoinenShakkiHeppas.png" />
     <None Include="Resources\ShakkiLahetti.png" />
     <None Include="Resources\ValkoinenShakkiLahetti.png" />
+    <None Include="Resources\ShakkiKuningatar.png" />
+    <None Include="Resources\ShakkiKunkku.png" />
+    <None Include="Resources\ValkoinenShakkiKunkku.png" />
+    <None Include="Resources\ValkoinenShakkiKuningatar.png" />
     <Content Include="Resources\ValkoinenShakkiTorni.png" />
     <Content Include="Resources\ShakkiTorni.png" />
   </ItemGroup>
