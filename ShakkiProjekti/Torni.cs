@@ -7,13 +7,8 @@ using System.Drawing;
 
 namespace ShakkiProjekti
 {
-    class Torni
+    class Torni : Nappula
     {
-        int SijaintiX;
-        int SijaintiY;
-        string Vari;
-        bool Ylitys;
-        Image Kuva;
         public Torni(int X, int Y, string U_Vari)
         {
             SijaintiX1 = X;
@@ -24,9 +19,6 @@ namespace ShakkiProjekti
                 Kuva = Properties.Resources.ShakkiTorni;
             }
         }
-
-        public int SijaintiY1 { get => SijaintiY; set => SijaintiY = value; }
-        public int SijaintiX1 { get => SijaintiX; set => SijaintiX = value; }
 
         public bool SallittuLiike(int AlotusX, int AlotusY, int LopetusX, int LopetusY)
         {

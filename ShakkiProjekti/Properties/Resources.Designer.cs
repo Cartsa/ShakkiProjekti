@@ -73,6 +73,26 @@ namespace ShakkiProjekti.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ShakkiKuningatar {
+            get {
+                object obj = ResourceManager.GetObject("ShakkiKuningatar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ShakkiKunkku {
+            get {
+                object obj = ResourceManager.GetObject("ShakkiKunkku", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ShakkiLahetti {
             get {
                 object obj = ResourceManager.GetObject("ShakkiLahetti", resourceCulture);
@@ -106,6 +126,26 @@ namespace ShakkiProjekti.Properties {
         internal static System.Drawing.Bitmap ValkoinenShakkiHeppas {
             get {
                 object obj = ResourceManager.GetObject("ValkoinenShakkiHeppas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ValkoinenShakkiKuningatar {
+            get {
+                object obj = ResourceManager.GetObject("ValkoinenShakkiKuningatar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ValkoinenShakkiKunkku {
+            get {
+                object obj = ResourceManager.GetObject("ValkoinenShakkiKunkku", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

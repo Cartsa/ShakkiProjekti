@@ -7,13 +7,8 @@ using System.Drawing;
 
 namespace ShakkiProjekti
 {
-    class Hevonen
+    class Hevonen : Nappula
     {
-        int SijaintiX;
-        int SijaintiY;
-        string Vari;
-        bool Ylitys;
-        Image Kuva;
         public Hevonen(int X, int Y, string U_Vari)
         {
             SijaintiX = X;

@@ -7,14 +7,8 @@ using System.Drawing;
 
 namespace ShakkiProjekti
 {
-    class Sotilas
+    class Sotilas : Nappula
     {
-        int SijaintiX;
-        int SijaintiY;
-        int YksVaiKaks = 1;
-        string Vari;
-        bool Ylitys;
-        Image kuva;
         public Sotilas(int X, int Y, string U_Vari)
         {
             SijaintiX1 = X;
@@ -22,12 +16,9 @@ namespace ShakkiProjekti
             Vari = U_Vari;          
             if(U_Vari == "Musta")
             {
-                kuva = Properties.Resources.ShakkiSolttu;
+                Kuva = Properties.Resources.ShakkiSolttu;
             }
         }
-
-        public int SijaintiY1 { get => SijaintiY; set => SijaintiY = value; }
-        public int SijaintiX1 { get => SijaintiX; set => SijaintiX = value; }
 
         public bool SallittuLiike(int AlotusX, int AlotusY ,int LopetusX, int LopetusY)
         {
