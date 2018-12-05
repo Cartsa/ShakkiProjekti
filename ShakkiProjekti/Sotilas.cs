@@ -7,8 +7,14 @@ using System.Drawing;
 
 namespace ShakkiProjekti
 {
-    class Sotilas : Nappula
+    class Sotilas
     {
+        int SijaintiX;
+        int SijaintiY;
+        int YksVaiKaks = 1;
+        string Vari;
+        bool Ylitys;
+        Image kuva;
         public Sotilas(int X, int Y, string U_Vari)
         {
             SijaintiX1 = X;
@@ -16,17 +22,27 @@ namespace ShakkiProjekti
             Vari = U_Vari;          
             if(U_Vari == "Musta")
             {
-                Kuva = Properties.Resources.ShakkiSolttu;
+                kuva = Properties.Resources.ShakkiSolttu;
             }
         }
+
+        public int SijaintiY1 { get => SijaintiY; set => SijaintiY = value; }
+        public int SijaintiX1 { get => SijaintiX; set => SijaintiX = value; }
 
         public bool SallittuLiike(int AlotusX, int AlotusY ,int LopetusX, int LopetusY)
         {
             if(Vari == "Musta")
             {
-                if (AlotusY == 7 && AlotusX == LopetusX && AlotusY + 2 == LopetusY)
+                if(AlotusY == 2)
                 {
-                    return true;
+                    if(AlotusY + 3 > LopetusY && AlotusX == LopetusX && LopetusY > AlotusY)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
                 else if (AlotusY + 1 == LopetusY && AlotusX == LopetusX)
                 {
@@ -39,6 +55,17 @@ namespace ShakkiProjekti
             }
             else if (Vari == "Valkoinen")
             {
+                if (AlotusY == 7)
+                {
+                    if (AlotusY - 3 < LopetusY && AlotusX == LopetusX && LopetusY < AlotusY)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
                 if (AlotusY - 1 == LopetusY && AlotusX == LopetusX)
                 {
                     return true;
