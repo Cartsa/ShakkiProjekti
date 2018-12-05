@@ -28,6 +28,7 @@ namespace ShakkiProjekti
         Bitmap ValkoinenKuningatar = Properties.Resources.ValkoinenShakkiKuningatar;
         Bitmap MustaKuningas = Properties.Resources.ShakkiKunkku;
         Bitmap ValkoinenKuningas = Properties.Resources.ValkoinenShakkiKunkku;
+
         public Form1()
         {
             InitializeComponent();
@@ -277,6 +278,7 @@ namespace ShakkiProjekti
                     Valittu = 0;
                 }
             }
+            Vuoro++;
         }
     }
 }
