@@ -166,9 +166,9 @@ namespace ShakkiProjekti
 
         private void button_Click(Object sender, EventArgs e)
         {
+            Button nappi = (Button)sender;
             if (Vuoro == 0)
-            {
-                Button nappi = (Button)sender;
+            {               
                 string NappiTagi = nappi.Tag.ToString();
                 List<string> puoliTagi = NappiTagi.Split(',').ToList<string>();
                 if (Valittu == 0)
