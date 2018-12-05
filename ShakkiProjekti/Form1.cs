@@ -14,6 +14,7 @@ namespace ShakkiProjekti
     {
         int Vuoro = 0;
         int Valittu = 0;
+        int Klikit = 0;
         string ValittuNappi;
         Button klikattuNappi;
         Bitmap MustaSolttu = Properties.Resources.ShakkiSolttu;
@@ -278,7 +279,16 @@ namespace ShakkiProjekti
                     Valittu = 0;
                 }
             }
-            Vuoro++;
+            else
+            {
+
+            }
+            Klikit++;
+            if (Klikit == 2)
+            {
+                Vuoro++;
+                Klikit = 0;
+            }
         }
     }
 }
