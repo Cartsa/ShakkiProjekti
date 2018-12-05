@@ -214,9 +214,9 @@ namespace ShakkiProjekti
                             }
                         }
                     }
-                    if (puoliTagi[2] == "MHeppa")
+                    if (puoliTagi[2] == "MHeppa" || puoliTagi[2] == "VHeppa")
                     {
-                        ValittuNappi = "MHeppa";
+                        ValittuNappi = puoliTagi[2];
                         Hevonen Heppa = new Hevonen(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), "Musta");
                         foreach (Button ruutu in this.Controls)
                         {
@@ -257,6 +257,13 @@ namespace ShakkiProjekti
                         string fag = nappi.Tag.ToString();
                         List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
                         nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "MHeppa";
+                    }
+                    if (ValittuNappi == "VHeppa")
+                    {
+                        nappi.Image = ValkoinenHeppa;
+                        string fag = nappi.Tag.ToString();
+                        List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
+                        nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "VHeppa";
                     }
                     foreach (Button clear in this.Controls)
                     {
