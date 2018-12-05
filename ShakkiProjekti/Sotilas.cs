@@ -33,7 +33,18 @@ namespace ShakkiProjekti
         {
             if(Vari == "Musta")
             {
-                if (AlotusY + 1 == LopetusY && AlotusX == LopetusX)
+                if(AlotusY == 2)
+                {
+                    if(AlotusY + 3 > LopetusY && AlotusX == LopetusX)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+                else if (AlotusY + 1 == LopetusY && AlotusX == LopetusX)
                 {
                     return true;
                 }
@@ -44,6 +55,17 @@ namespace ShakkiProjekti
             }
             else if (Vari == "Valkoinen")
             {
+                if (AlotusY == 7)
+                {
+                    if (AlotusY - 3 < LopetusY && AlotusX == LopetusX)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
                 if (AlotusY - 1 == LopetusY && AlotusX == LopetusX)
                 {
                     return true;
