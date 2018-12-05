@@ -24,6 +24,10 @@ namespace ShakkiProjekti
         Bitmap ValkoinenTorni = Properties.Resources.ValkoinenShakkiTorni;
         Bitmap MustaLahetti = Properties.Resources.ShakkiLahetti;
         Bitmap ValkoinenLahetti = Properties.Resources.ValkoinenShakkiLahetti;
+        Bitmap MustaKuningatar = Properties.Resources.ShakkiKuningatar;
+        Bitmap ValkoinenKuningatar = Properties.Resources.ValkoinenShakkiKuningatar;
+        Bitmap MustaKuningas = Properties.Resources.ShakkiKunkku;
+        Bitmap ValkoinenKuningas = Properties.Resources.ValkoinenShakkiKunkku;
         public Form1()
         {
             InitializeComponent();
@@ -127,8 +131,36 @@ namespace ShakkiProjekti
                         string fag = nappi.Tag.ToString();
                         nappi.Tag = fag + ",VLahetti";
                     }
-            }
-        }
+
+                    //Kuningatar
+                    if (tagi == "4,1")
+                    {
+                        nappi.Image = MustaKuningatar;
+                        string fag = nappi.Tag.ToString();
+                        nappi.Tag = fag + ",MKuningatar";
+                    }
+                    if (tagi == "4,8")
+                    {
+                        nappi.Image = ValkoinenKuningatar;
+                        string fag = nappi.Tag.ToString();
+                        nappi.Tag = fag + ",VLahetti";
+                    }
+
+                    //Kuningas
+                    if (tagi == "5,1")
+                    {
+                        nappi.Image = MustaKuningas;
+                        string fag = nappi.Tag.ToString();
+                        nappi.Tag = fag + ",MKuningas";
+                    }
+                    if (tagi == "5,8")
+                    {
+                        nappi.Image = ValkoinenKuningas;
+                        string fag = nappi.Tag.ToString();
+                        nappi.Tag = fag + ",VKuningas";
+                    }
+                }
+                }
 
         private void button_Click(Object sender, EventArgs e)
         {

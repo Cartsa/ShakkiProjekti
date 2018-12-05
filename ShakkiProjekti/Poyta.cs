@@ -51,5 +51,17 @@ namespace ShakkiProjekti
         //Mustat lähetit
         Torni mLahetti1 = new Torni(3, 1, "Musta");
         Torni mLahetti2 = new Torni(6, 1, "Musta");
+
+        //Valkoinen kuningatar
+        Kuningatar vKuningatar = new Kuningatar(4, 8, "Valkoinen");
+
+        //Musta kuningatar
+        Kuningatar mKuningatar = new Kuningatar(4, 1, "Musta");
+
+        //Valkoinen kuningas
+        Kuningas vKuningas = new Kuningas(5, 8, "Valkoinen");
+
+        //Musta kuningas
+        Kuningas mKuningas = new Kuningas(5, 1, "Musta");
     }
 }
