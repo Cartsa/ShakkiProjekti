@@ -102,7 +102,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(45, 49);
             this.button1.TabIndex = 0;
-            this.button1.Tag = "1,1,Musta";
+            this.button1.Tag = "1,1";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button_Click);
             // 
@@ -114,7 +114,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(45, 49);
             this.button2.TabIndex = 1;
-            this.button2.Tag = "2,1,Musta";
+            this.button2.Tag = "2,1";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button_Click);
             // 
@@ -126,7 +126,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(45, 49);
             this.button3.TabIndex = 2;
-            this.button3.Tag = "3,1,Musta";
+            this.button3.Tag = "3,1";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button_Click);
             // 
@@ -138,7 +138,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(45, 49);
             this.button4.TabIndex = 3;
-            this.button4.Tag = "4,1,Musta";
+            this.button4.Tag = "4,1";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button_Click);
             // 
@@ -150,7 +150,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(45, 49);
             this.button5.TabIndex = 4;
-            this.button5.Tag = "5,1,Musta";
+            this.button5.Tag = "5,1";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button_Click);
             // 
@@ -162,7 +162,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(45, 49);
             this.button6.TabIndex = 5;
-            this.button6.Tag = "6,1,Musta";
+            this.button6.Tag = "6,1";
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button_Click);
             // 
@@ -174,7 +174,7 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(45, 49);
             this.button7.TabIndex = 6;
-            this.button7.Tag = "7,1,Musta";
+            this.button7.Tag = "7,1";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button_Click);
             // 
@@ -186,7 +186,7 @@
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(45, 49);
             this.button8.TabIndex = 7;
-            this.button8.Tag = "8,1,Musta";
+            this.button8.Tag = "8,1";
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button_Click);
             // 
@@ -198,7 +198,7 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(45, 49);
             this.button9.TabIndex = 15;
-            this.button9.Tag = "1,2,Musta";
+            this.button9.Tag = "1,2";
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button_Click);
             // 
@@ -210,7 +210,7 @@
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(45, 49);
             this.button10.TabIndex = 14;
-            this.button10.Tag = "2,2,Musta";
+            this.button10.Tag = "2,2";
             this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.button_Click);
             // 
@@ -222,7 +222,7 @@
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(45, 49);
             this.button11.TabIndex = 13;
-            this.button11.Tag = "3,2,Musta";
+            this.button11.Tag = "3,2";
             this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.button_Click);
             // 
@@ -234,7 +234,7 @@
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(45, 49);
             this.button12.TabIndex = 12;
-            this.button12.Tag = "4,2,Musta";
+            this.button12.Tag = "4,2";
             this.button12.UseVisualStyleBackColor = false;
             this.button12.Click += new System.EventHandler(this.button_Click);
             // 
@@ -246,7 +246,7 @@
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(45, 49);
             this.button13.TabIndex = 11;
-            this.button13.Tag = "5,2,Musta";
+            this.button13.Tag = "5,2";
             this.button13.UseVisualStyleBackColor = false;
             this.button13.Click += new System.EventHandler(this.button_Click);
             // 
@@ -258,7 +258,7 @@
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(45, 49);
             this.button14.TabIndex = 10;
-            this.button14.Tag = "6,2,Musta";
+            this.button14.Tag = "6,2";
             this.button14.UseVisualStyleBackColor = false;
             this.button14.Click += new System.EventHandler(this.button_Click);
             // 
@@ -270,7 +270,7 @@
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(45, 49);
             this.button15.TabIndex = 9;
-            this.button15.Tag = "7,2,Musta";
+            this.button15.Tag = "7,2";
             this.button15.UseVisualStyleBackColor = false;
             this.button15.Click += new System.EventHandler(this.button_Click);
             // 
@@ -282,7 +282,7 @@
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(45, 49);
             this.button16.TabIndex = 8;
-            this.button16.Tag = "8,2,Musta";
+            this.button16.Tag = "8,2";
             this.button16.UseVisualStyleBackColor = false;
             this.button16.Click += new System.EventHandler(this.button_Click);
             // 
@@ -666,7 +666,7 @@
             this.button49.Name = "button49";
             this.button49.Size = new System.Drawing.Size(45, 49);
             this.button49.TabIndex = 55;
-            this.button49.Tag = "1,7,Valkoinen";
+            this.button49.Tag = "1,7";
             this.button49.UseVisualStyleBackColor = false;
             this.button49.Click += new System.EventHandler(this.button_Click);
             // 
@@ -678,7 +678,7 @@
             this.button51.Name = "button51";
             this.button51.Size = new System.Drawing.Size(45, 49);
             this.button51.TabIndex = 53;
-            this.button51.Tag = "3,7,Valkoinen";
+            this.button51.Tag = "3,7";
             this.button51.UseVisualStyleBackColor = false;
             this.button51.Click += new System.EventHandler(this.button_Click);
             // 
@@ -690,7 +690,7 @@
             this.button52.Name = "button52";
             this.button52.Size = new System.Drawing.Size(45, 49);
             this.button52.TabIndex = 52;
-            this.button52.Tag = "4,7,Valkoinen";
+            this.button52.Tag = "4,7";
             this.button52.UseVisualStyleBackColor = false;
             this.button52.Click += new System.EventHandler(this.button_Click);
             // 
@@ -702,7 +702,7 @@
             this.button54.Name = "button54";
             this.button54.Size = new System.Drawing.Size(45, 49);
             this.button54.TabIndex = 50;
-            this.button54.Tag = "6,7,Valkoinen";
+            this.button54.Tag = "6,7";
             this.button54.UseVisualStyleBackColor = false;
             this.button54.Click += new System.EventHandler(this.button_Click);
             // 
@@ -714,7 +714,7 @@
             this.button55.Name = "button55";
             this.button55.Size = new System.Drawing.Size(45, 49);
             this.button55.TabIndex = 49;
-            this.button55.Tag = "7,7,Valkoinen";
+            this.button55.Tag = "7,7";
             this.button55.UseVisualStyleBackColor = false;
             this.button55.Click += new System.EventHandler(this.button_Click);
             // 
@@ -726,7 +726,7 @@
             this.button56.Name = "button56";
             this.button56.Size = new System.Drawing.Size(45, 49);
             this.button56.TabIndex = 48;
-            this.button56.Tag = "8,7,Valkoinen";
+            this.button56.Tag = "8,7";
             this.button56.UseVisualStyleBackColor = false;
             this.button56.Click += new System.EventHandler(this.button_Click);
             // 
@@ -738,7 +738,7 @@
             this.button59.Name = "button59";
             this.button59.Size = new System.Drawing.Size(45, 49);
             this.button59.TabIndex = 61;
-            this.button59.Tag = "3,8,Valkoinen";
+            this.button59.Tag = "3,8";
             this.button59.UseVisualStyleBackColor = false;
             this.button59.Click += new System.EventHandler(this.button_Click);
             // 
@@ -750,7 +750,7 @@
             this.button60.Name = "button60";
             this.button60.Size = new System.Drawing.Size(45, 49);
             this.button60.TabIndex = 60;
-            this.button60.Tag = "4,8,Valkoinen";
+            this.button60.Tag = "4,8";
             this.button60.UseVisualStyleBackColor = false;
             this.button60.Click += new System.EventHandler(this.button_Click);
             // 
@@ -762,7 +762,7 @@
             this.button62.Name = "button62";
             this.button62.Size = new System.Drawing.Size(45, 49);
             this.button62.TabIndex = 58;
-            this.button62.Tag = "6,8,Valkoinen";
+            this.button62.Tag = "6,8";
             this.button62.UseVisualStyleBackColor = false;
             this.button62.Click += new System.EventHandler(this.button_Click);
             // 
@@ -774,7 +774,7 @@
             this.button63.Name = "button63";
             this.button63.Size = new System.Drawing.Size(45, 49);
             this.button63.TabIndex = 57;
-            this.button63.Tag = "7,8,Valkoinen";
+            this.button63.Tag = "7,8";
             this.button63.UseVisualStyleBackColor = false;
             this.button63.Click += new System.EventHandler(this.button_Click);
             // 
@@ -786,7 +786,7 @@
             this.button64.Name = "button64";
             this.button64.Size = new System.Drawing.Size(45, 49);
             this.button64.TabIndex = 56;
-            this.button64.Tag = "8,8,Valkoinen";
+            this.button64.Tag = "8,8";
             this.button64.UseVisualStyleBackColor = false;
             this.button64.Click += new System.EventHandler(this.button_Click);
             // 
@@ -798,7 +798,7 @@
             this.button61.Name = "button61";
             this.button61.Size = new System.Drawing.Size(45, 49);
             this.button61.TabIndex = 59;
-            this.button61.Tag = "5,8,Valkoinen";
+            this.button61.Tag = "5,8";
             this.button61.UseVisualStyleBackColor = false;
             this.button61.Click += new System.EventHandler(this.button_Click);
             // 
@@ -810,7 +810,7 @@
             this.button50.Name = "button50";
             this.button50.Size = new System.Drawing.Size(45, 49);
             this.button50.TabIndex = 54;
-            this.button50.Tag = "2,7,Valkoinen";
+            this.button50.Tag = "2,7";
             this.button50.UseVisualStyleBackColor = false;
             this.button50.Click += new System.EventHandler(this.button_Click);
             // 
@@ -822,7 +822,7 @@
             this.button58.Name = "button58";
             this.button58.Size = new System.Drawing.Size(45, 49);
             this.button58.TabIndex = 62;
-            this.button58.Tag = "2,8,Valkoinen";
+            this.button58.Tag = "2,8";
             this.button58.UseVisualStyleBackColor = false;
             this.button58.Click += new System.EventHandler(this.button_Click);
             // 
@@ -834,7 +834,7 @@
             this.button57.Name = "button57";
             this.button57.Size = new System.Drawing.Size(45, 49);
             this.button57.TabIndex = 63;
-            this.button57.Tag = "1,8,Valkoinen";
+            this.button57.Tag = "1,8";
             this.button57.UseVisualStyleBackColor = false;
             this.button57.Click += new System.EventHandler(this.button_Click);
             // 
@@ -858,7 +858,7 @@
             this.button53.Name = "button53";
             this.button53.Size = new System.Drawing.Size(45, 49);
             this.button53.TabIndex = 51;
-            this.button53.Tag = "5,7,Valkoinen";
+            this.button53.Tag = "5,7";
             this.button53.UseVisualStyleBackColor = false;
             this.button53.Click += new System.EventHandler(this.button_Click);
             // 
