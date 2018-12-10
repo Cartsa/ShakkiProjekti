@@ -174,7 +174,7 @@ namespace ShakkiProjekti
                 if (Valittu == 0)
                 {
                     klikattuNappi = (Button)sender;
-                    if(puoliTagi[3] == "EiNappia")
+                    if(puoliTagi[2] == "EiNappia")
                     {
                         return;
                     }
