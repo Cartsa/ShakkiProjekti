@@ -174,11 +174,11 @@ namespace ShakkiProjekti
                 if (Valittu == 0)
                 {
                     klikattuNappi = (Button)sender;
-                    if (puoliTagi[2] == "EiNappia")
+                    if(puoliTagi[2] == "EiNappia")
                     {
                         return;
                     }
-                    if (puoliTagi[2] == "VSolttu")
+                    else if(puoliTagi[2] == "VSolttu")
                     {
                         ValittuNappi = "VSolttu";
                         Sotilas solttu = new Sotilas(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), "Valkoinen");
@@ -197,7 +197,7 @@ namespace ShakkiProjekti
                             }
                         }      
                     }
-                    if (puoliTagi[2] == "VHeppa")
+                    else if(puoliTagi[2] == "VHeppa")
                     {
                         ValittuNappi = puoliTagi[2];
                         Hevonen Heppa = new Hevonen(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), "Valkoinen");
@@ -216,7 +216,7 @@ namespace ShakkiProjekti
                             }
                         }
                     }
-                    if (puoliTagi[2] == "VTorni")
+                    else if(puoliTagi[2] == "VTorni")
                     {
                         ValittuNappi = puoliTagi[2];
                         Torni torni = new Torni(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), "Valkoinen");
@@ -234,6 +234,11 @@ namespace ShakkiProjekti
                                 nappi.Enabled = true;
                             }
                         }
+                    }
+                    else
+                    {
+                        Valittu = 0;
+                        return;
                     }
                     Valittu = 1;
                 }
@@ -273,7 +278,7 @@ namespace ShakkiProjekti
                     Valittu = 0;
                 }
             }
-            else
+            else if (Vuoro == 1)
             {
                 string NappiTagi = nappi.Tag.ToString();
                 List<string> puoliTagi = NappiTagi.Split(',').ToList<string>();
@@ -284,7 +289,7 @@ namespace ShakkiProjekti
                     {
                         return;
                     }
-                    if (puoliTagi[2] == "MSolttu")
+                    else if(puoliTagi[2] == "MSolttu")
                     {
                         ValittuNappi = "MSolttu";
                         Sotilas solttu = new Sotilas(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), "Musta");
@@ -303,7 +308,7 @@ namespace ShakkiProjekti
                             }
                         }
                     }
-                    if (puoliTagi[2] == "MHeppa")
+                    else if(puoliTagi[2] == "MHeppa")
                     {
                         ValittuNappi = puoliTagi[2];
                         Hevonen Heppa = new Hevonen(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), "Musta");
@@ -322,7 +327,7 @@ namespace ShakkiProjekti
                             }
                         }
                     }
-                    if (puoliTagi[2] == "MTorni")
+                    else if(puoliTagi[2] == "MTorni")
                     {
                         ValittuNappi = puoliTagi[2];
                         Torni torni = new Torni(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), "Musta");
@@ -340,6 +345,11 @@ namespace ShakkiProjekti
                                 nappi.Enabled = true;
                             }
                         }
+                    }
+                    else
+                    {
+                        Valittu = 0;
+                        return;
                     }
                     Valittu = 1;
                 }
@@ -375,13 +385,21 @@ namespace ShakkiProjekti
                     string nappitagi = klikattuNappi.Tag.ToString();
                     List<string> nappipuoliTagi = nappitagi.Split(',').ToList<string>();
                     klikattuNappi.Tag = nappipuoliTagi[0] + "," + nappipuoliTagi[1] + "," + "EiNappia";
-                    Valittu = 0;
+                    Valittu = 0;                  
                 }              
                 }
             Klikit++;
             if (Klikit == 2)
             {
-                Vuoro++;
+                if (Vuoro == 0)
+                {
+                    Vuoro = 1;
+                }
+
+                else if (Vuoro == 1)
+                {
+                    Vuoro = 0;
+                }
                 Klikit = 0;
             }
         }
