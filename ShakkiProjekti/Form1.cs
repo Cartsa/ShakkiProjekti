@@ -47,13 +47,13 @@ namespace ShakkiProjekti
                 {
                     nappi.Image = MustaSolttu;
                     string fag = puoliTagi[0] + "," + puoliTagi[1];
-                    nappi.Tag = fag + ",MSolttu";
+                    nappi.Tag = fag + ",Musta,Solttu";
                 }
                 if (puoliTagi[1] == "7")
                 {
                     nappi.Image = ValkoinenSolttu;
                     string fag = puoliTagi[0] + "," + puoliTagi[1];
-                    nappi.Tag = fag + ",VSolttu";
+                    nappi.Tag = fag + ",Valkoinen,Solttu";
                 }
 
                 //Hepat
@@ -61,25 +61,25 @@ namespace ShakkiProjekti
                 {
                     nappi.Image = MustaHeppa;
                     string fag = nappi.Tag.ToString();
-                    nappi.Tag = fag + ",MHeppa";
+                    nappi.Tag = fag + ",Musta,Heppa";
                 }
                 if (tagi == "7,1")
                 {
                     nappi.Image = MustaHeppa;
                     string fag = nappi.Tag.ToString();
-                    nappi.Tag = fag + ",MHeppa";
+                    nappi.Tag = fag + ",Musta,Heppa";
                 }
                 if (tagi == "2,8")
                 {
                     nappi.Image = ValkoinenHeppa;
                     string fag = nappi.Tag.ToString();
-                    nappi.Tag = fag + ",VHeppa";
+                    nappi.Tag = fag + ",Valkoinen,Heppa";
                 }
                 if (tagi == "7,8")
                 {
                     nappi.Image = ValkoinenHeppa;
                     string fag = nappi.Tag.ToString();
-                    nappi.Tag = fag + ",VHeppa";
+                    nappi.Tag = fag + ",Valkoinen,Heppa";
                 }
 
                 //Tornit
@@ -87,25 +87,25 @@ namespace ShakkiProjekti
                 {
                     nappi.Image = MustaTorni;
                     string fag = nappi.Tag.ToString();
-                    nappi.Tag = fag + ",MTorni";
+                    nappi.Tag = fag + ",Musta,Torni";
                 }
                 if (tagi == "8,1")
                 {
                     nappi.Image = MustaTorni;
                     string fag = nappi.Tag.ToString();
-                    nappi.Tag = fag + ",MTorni";
+                    nappi.Tag = fag + ",Musta,Torni";
                 }
                 if (tagi == "1,8")
                 {
                     nappi.Image = ValkoinenTorni;
                     string fag = nappi.Tag.ToString();
-                    nappi.Tag = fag + ",VTorni";
+                    nappi.Tag = fag + ",Valkoinen,Torni";
                 }
                 if (tagi == "8,8")
                 {
                     nappi.Image = ValkoinenTorni;
                     string fag = nappi.Tag.ToString();
-                    nappi.Tag = fag + ",VTorni";
+                    nappi.Tag = fag + ",Valkoinen,Torni";
                 }
 
                 //Lähetit
@@ -113,25 +113,25 @@ namespace ShakkiProjekti
                 {
                     nappi.Image = MustaLahetti;
                     string fag = nappi.Tag.ToString();
-                    nappi.Tag = fag + ",MLahetti";
+                    nappi.Tag = fag + ",Musta,Lahetti";
                 }
                 if (tagi == "6,1")
                 {
                     nappi.Image = MustaLahetti;
                     string fag = nappi.Tag.ToString();
-                    nappi.Tag = fag + ",MLahetti";
+                    nappi.Tag = fag + ",Musta,Lahetti";
                 }
                 if (tagi == "3,8")
                 {
                     nappi.Image = ValkoinenLahetti;
                     string fag = nappi.Tag.ToString();
-                    nappi.Tag = fag + ",VLahetti";
+                    nappi.Tag = fag + ",Valkoinen,Lahetti";
                 }
                 if (tagi == "6,8")
                 {
                     nappi.Image = ValkoinenLahetti;
                     string fag = nappi.Tag.ToString();
-                    nappi.Tag = fag + ",VLahetti";
+                    nappi.Tag = fag + ",Valkoinen,Lahetti";
                 }
 
                 //Kuningatar
@@ -139,13 +139,13 @@ namespace ShakkiProjekti
                 {
                     nappi.Image = MustaKuningatar;
                     string fag = nappi.Tag.ToString();
-                    nappi.Tag = fag + ",MKuningatar";
+                    nappi.Tag = fag + ",Musta,Kuningatar";
                 }
                 if (tagi == "4,8")
                 {
                     nappi.Image = ValkoinenKuningatar;
                     string fag = nappi.Tag.ToString();
-                    nappi.Tag = fag + ",VLahetti";
+                    nappi.Tag = fag + ",Valkoinen,Lahetti";
                 }
 
                 //Kuningas
@@ -153,13 +153,13 @@ namespace ShakkiProjekti
                 {
                     nappi.Image = MustaKuningas;
                     string fag = nappi.Tag.ToString();
-                    nappi.Tag = fag + ",MKuningas";
+                    nappi.Tag = fag + ",Musta,Kuningas";
                 }
                 if (tagi == "5,8")
                 {
                     nappi.Image = ValkoinenKuningas;
                     string fag = nappi.Tag.ToString();
-                    nappi.Tag = fag + ",VKuningas";
+                    nappi.Tag = fag + ",Valkoinen,Kuningas";
                 }
             }
         }
@@ -174,11 +174,11 @@ namespace ShakkiProjekti
                 if (Valittu == 0)
                 {
                     klikattuNappi = (Button)sender;
-                    if(puoliTagi[2] == "EiNappia")
+                    if(puoliTagi[3] == "EiNappia")
                     {
                         return;
                     }
-                    else if(puoliTagi[2] == "VSolttu")
+                    else if(puoliTagi[2] == "Valkoinen" && puoliTagi[3] == "Solttu")
                     {
                         ValittuNappi = "VSolttu";
                         Sotilas solttu = new Sotilas(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), "Valkoinen");
@@ -197,9 +197,9 @@ namespace ShakkiProjekti
                             }
                         }      
                     }
-                    else if(puoliTagi[2] == "VHeppa")
+                    else if(puoliTagi[2] == "Valkoinen" && puoliTagi[3] == "Heppa")
                     {
-                        ValittuNappi = puoliTagi[2];
+                        ValittuNappi = "VHeppa";
                         Hevonen Heppa = new Hevonen(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), "Valkoinen");
                         foreach (Button ruutu in this.Controls)
                         {
@@ -216,9 +216,9 @@ namespace ShakkiProjekti
                             }
                         }
                     }
-                    else if(puoliTagi[2] == "VTorni")
+                    else if(puoliTagi[2] == "Valkoinen" && puoliTagi[3] == "Torni")
                     {
-                        ValittuNappi = puoliTagi[2];
+                        ValittuNappi = "VTorni";
                         Torni torni = new Torni(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), "Valkoinen");
                         foreach (Button ruutu in this.Controls)
                         {
@@ -289,7 +289,7 @@ namespace ShakkiProjekti
                     {
                         return;
                     }
-                    else if(puoliTagi[2] == "MSolttu")
+                    else if(puoliTagi[2] == "Musta" && puoliTagi[3] == "Solttu")
                     {
                         ValittuNappi = "MSolttu";
                         Sotilas solttu = new Sotilas(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), "Musta");
@@ -308,9 +308,9 @@ namespace ShakkiProjekti
                             }
                         }
                     }
-                    else if(puoliTagi[2] == "MHeppa")
+                    else if(puoliTagi[2] == "Musta" && puoliTagi[3] == "Heppa")
                     {
-                        ValittuNappi = puoliTagi[2];
+                        ValittuNappi = "MHeppa";
                         Hevonen Heppa = new Hevonen(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), "Musta");
                         foreach (Button ruutu in this.Controls)
                         {
@@ -327,9 +327,9 @@ namespace ShakkiProjekti
                             }
                         }
                     }
-                    else if(puoliTagi[2] == "MTorni")
+                    else if(puoliTagi[2] == "Musta" && puoliTagi[3] == "Torni")
                     {
-                        ValittuNappi = puoliTagi[2];
+                        ValittuNappi = "MTorni";
                         Torni torni = new Torni(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), "Musta");
                         foreach (Button ruutu in this.Controls)
                         {
