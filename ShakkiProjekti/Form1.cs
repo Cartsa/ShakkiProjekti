@@ -249,7 +249,7 @@ namespace ShakkiProjekti
                         nappi.Image = ValkoinenSolttu;
                         string fag = nappi.Tag.ToString();
                         List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
-                        nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "VSolttu";
+                        nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Valkoinen,Solttu";
                     }
                     
                     if (ValittuNappi == "VHeppa")
@@ -257,14 +257,14 @@ namespace ShakkiProjekti
                         nappi.Image = ValkoinenHeppa;
                         string fag = nappi.Tag.ToString();
                         List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
-                        nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "VHeppa";
+                        nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Valkoinen,Heppa";
                     }
                     if (ValittuNappi == "VTorni")
                     {
                         nappi.Image = ValkoinenTorni;
                         string fag = nappi.Tag.ToString();
                         List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
-                        nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "VTorni";
+                        nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Valkoinen,Torni";
                     }      
                     foreach (Button clear in this.Controls)
                     {
@@ -360,21 +360,21 @@ namespace ShakkiProjekti
                         nappi.Image = MustaSolttu;
                         string fag = nappi.Tag.ToString();
                         List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
-                        nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "MSolttu";
+                        nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Musta,Solttu";
                     }
                     if (ValittuNappi == "MHeppa")
                     {
                         nappi.Image = MustaHeppa;
                         string fag = nappi.Tag.ToString();
                         List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
-                        nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "MHeppa";
+                        nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Musta,Heppa";
                     }
                     if (ValittuNappi == "MTorni")
                     {
                         nappi.Image = MustaTorni;
                         string fag = nappi.Tag.ToString();
                         List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
-                        nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "MTorni";
+                        nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Musta,Torni";
                     }
                     foreach (Button clear in this.Controls)
                     {
