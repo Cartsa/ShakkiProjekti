@@ -1,0 +1,8 @@
+                    if (AlotusY + 1 == LopetusY && AlotusX == + 1 + LopetusX || AlotusY + 1 == LopetusY && AlotusX == - 1 + LopetusX)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }

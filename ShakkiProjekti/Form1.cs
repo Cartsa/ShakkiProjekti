@@ -188,7 +188,12 @@ namespace ShakkiProjekti
                         {
                             string ruutuTagi = ruutu.Tag.ToString();
                             List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
-                            if (solttu.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])))
+                            if (solttu.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "EiNappia")
+                            {
+                                ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
+                            }
+                            else if (Convert.ToInt32(puoliTagi[1]) - 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) + 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Musta" ||
+                                     Convert.ToInt32(puoliTagi[1]) - 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) - 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Musta")
                             {
                                 ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
                             }
@@ -197,7 +202,9 @@ namespace ShakkiProjekti
                                 ruutu.Enabled = false;
                                 nappi.Enabled = true;
                             }
-                        }      
+                            
+                        }
+                        
                     }
                     else if(puoliTagi[2] == "Valkoinen" && puoliTagi[3] == "Heppa")
                     {
@@ -310,10 +317,17 @@ namespace ShakkiProjekti
                         {
                             string ruutuTagi = ruutu.Tag.ToString();
                             List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
-                            if (solttu.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])))
+                            if (solttu.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "EiNappia")
                             {
                                 ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
                             }
+
+                            else if (Convert.ToInt32(puoliTagi[1]) + 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) + 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Valkoinen" ||
+                                     Convert.ToInt32(puoliTagi[1]) + 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) - 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Valkoinen")
+                            {
+                                ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
+                            }
+
                             else
                             {
                                 ruutu.Enabled = false;
@@ -333,6 +347,7 @@ namespace ShakkiProjekti
                             {
                                 ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
                             }
+                            
                             else
                             {
                                 ruutu.Enabled = false;
