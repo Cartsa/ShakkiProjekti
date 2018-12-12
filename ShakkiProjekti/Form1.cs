@@ -196,15 +196,14 @@ namespace ShakkiProjekti
                                      Convert.ToInt32(puoliTagi[1]) - 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) - 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Musta")
                             {
                                 ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
+
                             }
                             else
                             {
                                 ruutu.Enabled = false;
                                 nappi.Enabled = true;
-                            }
-                            
+                            }  
                         }
-                        
                     }
                     else if(puoliTagi[2] == "Valkoinen" && puoliTagi[3] == "Heppa")
                     {
