@@ -243,6 +243,11 @@ namespace ShakkiProjekti
                             }
                         }
                     }
+                    else if(puoliTagi[2] == "Valkoinen" && puoliTagi[3] == "Kuningas")
+                    {
+                        ValittuNappi = "VKuningas";
+
+                    }
                     else
                     {
                         Valittu = 0;
@@ -425,7 +430,7 @@ namespace ShakkiProjekti
                     klikattuNappi.Tag = nappipuoliTagi[0] + "," + nappipuoliTagi[1] + "," + "EiNappia";
                     Valittu = 0;                  
                 }              
-                }
+            }
             Klikit++;
             if (Klikit == 2)
             {
