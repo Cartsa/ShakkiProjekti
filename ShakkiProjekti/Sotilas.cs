@@ -24,9 +24,6 @@ namespace ShakkiProjekti
         {
             if (Vari == "Musta")
             {
-
-                
-
                 if (AlotusY == 2)
                 {
                     if(AlotusY + 3 > LopetusY && AlotusX == LopetusX && LopetusY > AlotusY)
