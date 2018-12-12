@@ -23,27 +23,9 @@ namespace ShakkiProjekti
 
         public bool SallittuLiike(int AlotusX, int AlotusY, int LopetusX, int LopetusY)
         {
-            if (Vari == "Musta")
+            if (AlotusX < LopetusX && AlotusY < LopetusY)
             {
-                if (AlotusY + 1 == LopetusY && AlotusX == LopetusX)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else if (Vari == "Valkoinen")
-            {
-                if (AlotusY - 1 == LopetusY && AlotusX == LopetusX)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return true;
             }
             else
             {
