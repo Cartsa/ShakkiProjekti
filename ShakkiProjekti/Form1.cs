@@ -146,7 +146,7 @@ namespace ShakkiProjekti
                 {
                     nappi.Image = ValkoinenKuningatar;
                     string fag = nappi.Tag.ToString();
-                    nappi.Tag = fag + ",Valkoinen,Lahetti";
+                    nappi.Tag = fag + ",Valkoinen,Kuningatar";
                 }
 
                 //Kuningas
