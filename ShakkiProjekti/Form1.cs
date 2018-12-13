@@ -232,7 +232,7 @@ namespace ShakkiProjekti
                         {
                             string ruutuTagi = ruutu.Tag.ToString();
                             List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
-                            if (torni.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])))
+                            if (torni.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] != "Valkoinen")
                             {
                                 ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
                             }
@@ -251,7 +251,7 @@ namespace ShakkiProjekti
                         {
                             string ruutuTagi = ruutu.Tag.ToString();
                             List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
-                            if (lahetti.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])))
+                            if (lahetti.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] != "Valkoinen")
                             {
                                 ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
                             }
@@ -440,7 +440,7 @@ namespace ShakkiProjekti
                         {
                             string ruutuTagi = ruutu.Tag.ToString();
                             List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
-                            if (torni.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])))
+                            if (torni.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] != "Musta")
                             {
                                 ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
                             }
@@ -459,7 +459,7 @@ namespace ShakkiProjekti
                         {
                             string ruutuTagi = ruutu.Tag.ToString();
                             List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
-                            if (lahetti.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])))
+                            if (lahetti.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] != "Musta")
                             {
                                 ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
                             }
