@@ -180,7 +180,7 @@ namespace ShakkiProjekti
                     {
                         return;
                     }
-                    else if(puoliTagi[2] == "Valkoinen" && puoliTagi[3] == "Solttu")
+                    else if (puoliTagi[2] == "Valkoinen" && puoliTagi[3] == "Solttu")
                     {
                         ValittuNappi = "VSolttu";
                         Sotilas solttu = new Sotilas(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), "Valkoinen");
@@ -202,10 +202,10 @@ namespace ShakkiProjekti
                             {
                                 ruutu.Enabled = false;
                                 nappi.Enabled = true;
-                            }  
+                            }
                         }
                     }
-                    else if(puoliTagi[2] == "Valkoinen" && puoliTagi[3] == "Heppa")
+                    else if (puoliTagi[2] == "Valkoinen" && puoliTagi[3] == "Heppa")
                     {
                         ValittuNappi = "VHeppa";
                         Hevonen Heppa = new Hevonen(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), "Valkoinen");
@@ -224,7 +224,7 @@ namespace ShakkiProjekti
                             }
                         }
                     }
-                    else if(puoliTagi[2] == "Valkoinen" && puoliTagi[3] == "Torni")
+                    else if (puoliTagi[2] == "Valkoinen" && puoliTagi[3] == "Torni")
                     {
                         ValittuNappi = "VTorni";
                         Torni torni = new Torni(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), "Valkoinen");
@@ -252,6 +252,25 @@ namespace ShakkiProjekti
                             string ruutuTagi = ruutu.Tag.ToString();
                             List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
                             if (lahetti.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])))
+                            {
+                                ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
+                            }
+                            else
+                            {
+                                ruutu.Enabled = false;
+                                nappi.Enabled = true;
+                            }
+                        }
+                    }
+                    else if (puoliTagi[2] == "Valkoinen" && puoliTagi[3] == "Kuningas")
+                    {
+                        ValittuNappi = "VKuningas";
+                        Kuningas kuningas = new Kuningas(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), "Valkoinen");
+                        foreach (Button ruutu in this.Controls)
+                        {
+                            string ruutuTagi = ruutu.Tag.ToString();
+                            List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
+                            if (kuningas.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])))
                             {
                                 ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
                             }
