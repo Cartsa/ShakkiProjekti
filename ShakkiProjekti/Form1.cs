@@ -281,6 +281,25 @@ namespace ShakkiProjekti
                             }
                         }
                     }
+                    else if (puoliTagi[2] == "Valkoinen" && puoliTagi[3] == "Kuningatar")
+                    {
+                        ValittuNappi = "VKuningatar";
+                        Kuningatar kuningatar = new Kuningatar(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), "Valkoinen");
+                        foreach (Button ruutu in this.Controls)
+                        {
+                            string ruutuTagi = ruutu.Tag.ToString();
+                            List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
+                            if (kuningatar.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] != "Valkoinen")
+                            {
+                                ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
+                            }
+                            else
+                            {
+                                ruutu.Enabled = false;
+                                nappi.Enabled = true;
+                            }
+                        }
+                    }
                     else
                     {
                         Valittu = 0;
@@ -335,6 +354,13 @@ namespace ShakkiProjekti
                         string fag = nappi.Tag.ToString();
                         List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
                         nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Valkoinen,Kuningas";
+                    }
+                    else if (ValittuNappi == "VKuningatar")
+                    {
+                        nappi.Image = ValkoinenKuningatar;
+                        string fag = nappi.Tag.ToString();
+                        List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
+                        nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Valkoinen,Kuningatar";
                     }
                     foreach (Button clear in this.Controls)
                     {
@@ -463,6 +489,25 @@ namespace ShakkiProjekti
                             }
                         }
                     }
+                    else if (puoliTagi[2] == "Musta" && puoliTagi[3] == "Kuningatar")
+                    {
+                        ValittuNappi = "MKuningatar";
+                        Kuningatar kuningatar = new Kuningatar(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), "Musta");
+                        foreach (Button ruutu in this.Controls)
+                        {
+                            string ruutuTagi = ruutu.Tag.ToString();
+                            List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
+                            if (kuningatar.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] != "Musta")
+                            {
+                                ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
+                            }
+                            else
+                            {
+                                ruutu.Enabled = false;
+                                nappi.Enabled = true;
+                            }
+                        }
+                    }
                     else
                     {
                         Valittu = 0;
@@ -517,6 +562,13 @@ namespace ShakkiProjekti
                         string fag = nappi.Tag.ToString();
                         List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
                         nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Musta,Kuningas";
+                    }
+                    else if (ValittuNappi == "MKuningatar")
+                    {
+                        nappi.Image = MustaKuningatar;
+                        string fag = nappi.Tag.ToString();
+                        List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
+                        nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Musta,Kuningatar";
                     }
                     foreach (Button clear in this.Controls)
                     {

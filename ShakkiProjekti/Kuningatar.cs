@@ -8,6 +8,7 @@ namespace ShakkiProjekti
 {
     class Kuningatar : Nappula
     {
+        int juu;
         public Kuningatar(int X, int Y, string U_Vari)
         {
             SijaintiX1 = X;
@@ -21,31 +22,32 @@ namespace ShakkiProjekti
 
         public bool SallittuLiike(int AlotusX, int AlotusY, int LopetusX, int LopetusY)
         {
-            if (Vari == "Musta")
+            juu = 0;
+            if (AlotusX == LopetusX || AlotusY == LopetusY)
             {
-                if (AlotusY + 1 == LopetusY && AlotusX == LopetusX)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else if (Vari == "Valkoinen")
-            {
-                if (AlotusY - 1 == LopetusY && AlotusX == LopetusX)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return true;
             }
             else
             {
-                return false;
+
+                for (int i = 0; i < 9; i++)
+                {
+                    if (AlotusX + i == LopetusX && AlotusY + i == LopetusY ||
+                        AlotusX + i == LopetusX && AlotusY - i == LopetusY ||
+                        AlotusX - i == LopetusX && AlotusY + i == LopetusY ||
+                        AlotusX - i == LopetusX && AlotusY - i == LopetusY)
+                    {
+                        juu = 1;
+                    }
+                }
+                if (juu == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
         }
     }
