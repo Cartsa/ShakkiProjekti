@@ -9,7 +9,7 @@ namespace ShakkiProjekti
 {
     class Lahetti : Nappula
     {
-
+        int juu;
         public Lahetti(int X, int Y, string U_Vari)
         {
             SijaintiX1 = X;
@@ -23,7 +23,18 @@ namespace ShakkiProjekti
 
         public bool SallittuLiike(int AlotusX, int AlotusY, int LopetusX, int LopetusY)
         {
-            if (AlotusX < LopetusX && AlotusY < LopetusY)
+            juu = 0;
+            for(int i = 0; i < 9; i++)
+            {
+                if (AlotusX + i == LopetusX && AlotusY + i == LopetusY ||
+                    AlotusX + i == LopetusX && AlotusY - i == LopetusY ||
+                    AlotusX - i == LopetusX && AlotusY + i == LopetusY ||
+                    AlotusX - i == LopetusX && AlotusY - i == LopetusY)
+                {
+                    juu = 1;
+                }           
+            }
+            if(juu == 1)
             {
                 return true;
             }
