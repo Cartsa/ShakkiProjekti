@@ -309,7 +309,7 @@ namespace ShakkiProjekti
                 }
                 else if (Valittu == 1)
                 {
-                    if(ViimeTagi == nappi.Tag.ToString())
+                    if (ViimeTagi == nappi.Tag.ToString())
                     {
                         Klikit = 0;
                         Valittu = 0;
@@ -326,7 +326,7 @@ namespace ShakkiProjekti
                         string fag = nappi.Tag.ToString();
                         List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
                         nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Valkoinen,Solttu";
-                    }                  
+                    }
                     else if (ValittuNappi == "VHeppa")
                     {
                         nappi.Image = ValkoinenHeppa;
@@ -361,6 +361,22 @@ namespace ShakkiProjekti
                         string fag = nappi.Tag.ToString();
                         List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
                         nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Valkoinen,Kuningatar";
+                        Kuningatar kuningatar = new Kuningatar(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), "Valkoinen");
+                        foreach (Button ruutu in this.Controls)
+                        {
+                                string ruutuTagi = ruutu.Tag.ToString();
+                                List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
+                            try
+                            {
+                                if (kuningatar.SallittuLiike(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "Musta" && RuutupuoliTagi[3] == "Kuningas")
+                                {
+                                    MessageBox.Show("Shakkitilanne");
+                                }
+                            }catch(Exception virhe)
+                            {
+
+                            }
+                        }
                     }
                     foreach (Button clear in this.Controls)
                     {
