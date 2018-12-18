@@ -27,8 +27,8 @@ namespace ShakkiProjekti
                 AlotusY + 1 == LopetusY && AlotusX - 1 == LopetusX || 
                 AlotusY - 1 == LopetusY && AlotusX + 1 == LopetusX || 
                 AlotusY + 1 == LopetusY && AlotusX == LopetusX || 
-                AlotusY - 1 == LopetusY && AlotusX == LopetusX || 
-                AlotusY == LopetusY && AlotusX + 1 == LopetusX || 
+                AlotusY - 1 == LopetusY && AlotusX == LopetusX ||
+                AlotusY == LopetusY && AlotusX + 1 == LopetusX ||
                 AlotusY == LopetusY && AlotusX - 1 == LopetusX)
             {
                 return true;

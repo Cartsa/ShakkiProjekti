@@ -188,10 +188,10 @@ namespace ShakkiProjekti
                         {
                             string ruutuTagi = ruutu.Tag.ToString();
                             List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
-                            if (solttu.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "EiNappia")
-                            {
-                                ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
-                            }
+                                if (solttu.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "EiNappia")
+                                {
+                                    ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
+                                }
                             else if (Convert.ToInt32(puoliTagi[1]) - 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) + 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Musta" ||
                                      Convert.ToInt32(puoliTagi[1]) - 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) - 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Musta")
                             {
@@ -326,6 +326,27 @@ namespace ShakkiProjekti
                         string fag = nappi.Tag.ToString();
                         List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
                         nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Valkoinen,Solttu";
+                        Sotilas sotilas = new Sotilas(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), "Valkoinen");
+                        foreach (Button ruutu in this.Controls)
+                        {
+                            string ruutuTagi = ruutu.Tag.ToString();
+                            List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
+                            try
+                            {
+                                if (Convert.ToInt32(puoliTagi[1]) - 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) + 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Musta" ||
+                                    Convert.ToInt32(puoliTagi[1]) - 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) - 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Musta")
+                                {
+                                    if (sotilas.SallittuLiike(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "Musta" && RuutupuoliTagi[3] == "Kuningas")
+                                    {
+                                        MessageBox.Show("Shakkitilanne");
+                                    }
+                                }
+                            }
+                            catch (Exception virhe)
+                            {
+
+                            }
+                        }
                     }
                     else if (ValittuNappi == "VHeppa")
                     {
@@ -333,6 +354,23 @@ namespace ShakkiProjekti
                         string fag = nappi.Tag.ToString();
                         List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
                         nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Valkoinen,Heppa";
+                        Hevonen hevonen = new Hevonen(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), "Valkoinen");
+                        foreach (Button ruutu in this.Controls)
+                        {
+                            string ruutuTagi = ruutu.Tag.ToString();
+                            List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
+                            try
+                            {
+                                if (hevonen.SallittuLiike(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "Musta" && RuutupuoliTagi[3] == "Kuningas")
+                                {
+                                    MessageBox.Show("Shakkitilanne");
+                                }
+                            }
+                            catch (Exception virhe)
+                            {
+
+                            }
+                        }
                     }
                     else if (ValittuNappi == "VTorni")
                     {
@@ -340,6 +378,23 @@ namespace ShakkiProjekti
                         string fag = nappi.Tag.ToString();
                         List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
                         nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Valkoinen,Torni";
+                        Torni torni = new Torni(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), "Valkoinen");
+                        foreach (Button ruutu in this.Controls)
+                        {
+                            string ruutuTagi = ruutu.Tag.ToString();
+                            List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
+                            try
+                            {
+                                if (torni.SallittuLiike(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "Musta" && RuutupuoliTagi[3] == "Kuningas")
+                                {
+                                    MessageBox.Show("Shakkitilanne");
+                                }
+                            }
+                            catch (Exception virhe)
+                            {
+
+                            }
+                        }
                     }
                     else if (ValittuNappi == "VLahetti")
                     {
@@ -347,6 +402,23 @@ namespace ShakkiProjekti
                         string fag = nappi.Tag.ToString();
                         List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
                         nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Valkoinen,Lahetti";
+                        Lahetti lahetti = new Lahetti(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), "Valkoinen");
+                        foreach (Button ruutu in this.Controls)
+                        {
+                            string ruutuTagi = ruutu.Tag.ToString();
+                            List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
+                            try
+                            {
+                                if (lahetti.SallittuLiike(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "Musta" && RuutupuoliTagi[3] == "Kuningas")
+                                {
+                                    MessageBox.Show("Shakkitilanne");
+                                }
+                            }
+                            catch (Exception virhe)
+                            {
+
+                            }
+                        }
                     }
                     else if (ValittuNappi == "VKuningas")
                     {
@@ -374,7 +446,7 @@ namespace ShakkiProjekti
                                 }
                             }catch(Exception virhe)
                             {
-
+                               
                             }
                         }
                     }
@@ -550,6 +622,27 @@ namespace ShakkiProjekti
                         string fag = nappi.Tag.ToString();
                         List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
                         nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Musta,Solttu";
+                        Sotilas sotilas = new Sotilas(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), "Musta");
+                        foreach (Button ruutu in this.Controls)
+                        {
+                            string ruutuTagi = ruutu.Tag.ToString();
+                            List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
+                            try
+                            {
+                                if (Convert.ToInt32(puoliTagi[1]) + 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) + 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Valkoinen" ||
+                                    Convert.ToInt32(puoliTagi[1]) + 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) - 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Valkoinen")
+                                {
+                                    if (sotilas.SallittuLiike(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "Musta" && RuutupuoliTagi[3] == "Kuningas")
+                                    {
+                                        MessageBox.Show("Shakkitilanne");
+                                    }
+                                }
+                            }
+                            catch (Exception virhe)
+                            {
+
+                            }
+                        }
                     }
                     else if (ValittuNappi == "MHeppa")
                     {
@@ -557,6 +650,23 @@ namespace ShakkiProjekti
                         string fag = nappi.Tag.ToString();
                         List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
                         nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Musta,Heppa";
+                        Hevonen hevonen = new Hevonen(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), "Musta");
+                        foreach (Button ruutu in this.Controls)
+                        {
+                            string ruutuTagi = ruutu.Tag.ToString();
+                            List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
+                            try
+                            {
+                                if (hevonen.SallittuLiike(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "Musta" && RuutupuoliTagi[3] == "Kuningas")
+                                {
+                                    MessageBox.Show("Shakkitilanne");
+                                }
+                            }
+                            catch (Exception virhe)
+                            {
+
+                            }
+                        }
                     }
                     else if (ValittuNappi == "MTorni")
                     {
@@ -564,6 +674,23 @@ namespace ShakkiProjekti
                         string fag = nappi.Tag.ToString();
                         List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
                         nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Musta,Torni";
+                        Torni torni = new Torni(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), "Musta");
+                        foreach (Button ruutu in this.Controls)
+                        {
+                            string ruutuTagi = ruutu.Tag.ToString();
+                            List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
+                            try
+                            {
+                                if (torni.SallittuLiike(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "Musta" && RuutupuoliTagi[3] == "Kuningas")
+                                {
+                                    MessageBox.Show("Shakkitilanne");
+                                }
+                            }
+                            catch (Exception virhe)
+                            {
+
+                            }
+                        }
                     }
                     else if (ValittuNappi == "MLahetti")
                     {
@@ -571,6 +698,23 @@ namespace ShakkiProjekti
                         string fag = nappi.Tag.ToString();
                         List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
                         nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Musta,Lahetti";
+                        Lahetti lahetti = new Lahetti(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), "Musta");
+                        foreach (Button ruutu in this.Controls)
+                        {
+                            string ruutuTagi = ruutu.Tag.ToString();
+                            List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
+                            try
+                            {
+                                if (lahetti.SallittuLiike(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "Musta" && RuutupuoliTagi[3] == "Kuningas")
+                                {
+                                    MessageBox.Show("Shakkitilanne");
+                                }
+                            }
+                            catch (Exception virhe)
+                            {
+
+                            }
+                        }
                     }
                     else if (ValittuNappi == "MKuningas")
                     {
@@ -585,6 +729,23 @@ namespace ShakkiProjekti
                         string fag = nappi.Tag.ToString();
                         List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
                         nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Musta,Kuningatar";
+                        Kuningatar kuningatar = new Kuningatar(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), "Musta");
+                        foreach (Button ruutu in this.Controls)
+                        {
+                            string ruutuTagi = ruutu.Tag.ToString();
+                            List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
+                            try
+                            {
+                                if (kuningatar.SallittuLiike(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "Musta" && RuutupuoliTagi[3] == "Kuningas")
+                                {
+                                    MessageBox.Show("Shakkitilanne");
+                                }
+                            }
+                            catch (Exception virhe)
+                            {
+
+                            }
+                        }
                     }
                     foreach (Button clear in this.Controls)
                     {

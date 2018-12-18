@@ -12,7 +12,6 @@ namespace ShakkiProjekti
         public int SijaintiX;
         public int SijaintiY;
         public string Vari;
-        bool Ylitys;
         public Image Kuva;
         public Nappula()
         {
