@@ -333,15 +333,12 @@ namespace ShakkiProjekti
                             List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
                             try
                             {
-                                if (Convert.ToInt32(puoliTagi[1]) - 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) + 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Musta" ||
-                                    Convert.ToInt32(puoliTagi[1]) - 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) - 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Musta")
-                                {
-                                    if (sotilas.SallittuLiike(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "Musta" && RuutupuoliTagi[3] == "Kuningas")
+                                    if (Convert.ToInt32(puoliTagi[1]) - 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) + 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Musta" && RuutupuoliTagi[3] == "Kuningas" ||
+                                        Convert.ToInt32(puoliTagi[1]) - 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) - 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Musta" && RuutupuoliTagi[3] == "Kuningas")
                                     {
                                         MessageBox.Show("Shakkitilanne");
                                     }
                                 }
-                            }
                             catch (Exception virhe)
                             {
 
@@ -629,15 +626,12 @@ namespace ShakkiProjekti
                             List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
                             try
                             {
-                                if (Convert.ToInt32(puoliTagi[1]) + 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) + 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Valkoinen" ||
-                                    Convert.ToInt32(puoliTagi[1]) + 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) - 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Valkoinen")
-                                {
-                                    if (sotilas.SallittuLiike(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "Musta" && RuutupuoliTagi[3] == "Kuningas")
+                                    if (Convert.ToInt32(puoliTagi[1]) + 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) + 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Valkoinen" && RuutupuoliTagi[3] == "Kuningas" ||
+                                        Convert.ToInt32(puoliTagi[1]) + 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) - 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Valkoinen" && RuutupuoliTagi[3] == "Kuningas")
                                     {
                                         MessageBox.Show("Shakkitilanne");
                                     }
                                 }
-                            }
                             catch (Exception virhe)
                             {
 
@@ -657,7 +651,7 @@ namespace ShakkiProjekti
                             List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
                             try
                             {
-                                if (hevonen.SallittuLiike(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "Musta" && RuutupuoliTagi[3] == "Kuningas")
+                                if (hevonen.SallittuLiike(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "Valkoinen" && RuutupuoliTagi[3] == "Kuningas")
                                 {
                                     MessageBox.Show("Shakkitilanne");
                                 }
@@ -681,7 +675,7 @@ namespace ShakkiProjekti
                             List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
                             try
                             {
-                                if (torni.SallittuLiike(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "Musta" && RuutupuoliTagi[3] == "Kuningas")
+                                if (torni.SallittuLiike(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "Valkoinen" && RuutupuoliTagi[3] == "Kuningas")
                                 {
                                     MessageBox.Show("Shakkitilanne");
                                 }
@@ -705,7 +699,7 @@ namespace ShakkiProjekti
                             List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
                             try
                             {
-                                if (lahetti.SallittuLiike(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "Musta" && RuutupuoliTagi[3] == "Kuningas")
+                                if (lahetti.SallittuLiike(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "Valkoinen" && RuutupuoliTagi[3] == "Kuningas")
                                 {
                                     MessageBox.Show("Shakkitilanne");
                                 }
@@ -736,7 +730,7 @@ namespace ShakkiProjekti
                             List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
                             try
                             {
-                                if (kuningatar.SallittuLiike(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "Musta" && RuutupuoliTagi[3] == "Kuningas")
+                                if (kuningatar.SallittuLiike(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "Valkoinen" && RuutupuoliTagi[3] == "Kuningas")
                                 {
                                     MessageBox.Show("Shakkitilanne");
                                 }
