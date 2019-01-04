@@ -340,7 +340,7 @@ namespace ShakkiProjekti
                                 }
                                 else
                                 {
-
+                                    
                                 }
                             }
                         }
