@@ -30,6 +30,7 @@ namespace ShakkiProjekti
         Bitmap MustaKuningas = Properties.Resources.ShakkiKunkku;
         Bitmap ValkoinenKuningas = Properties.Resources.ValkoinenShakkiKunkku;
         string ViimeTagi;
+        bool breakki = false;
 
         public Form1()
         {
@@ -247,18 +248,27 @@ namespace ShakkiProjekti
                         }
                         for (int looppi1 = 1; looppi1 < 9; looppi1++)
                         {
+                            if (breakki)
+                            {
+                                break;
+                            }
                             foreach (Button testi in SallitutLiikkeet)
                             {
                                 string TestiTagi = testi.Tag.ToString();
                                 List<string> TestiPuoliTagi = TestiTagi.Split(',').ToList<string>();
                                 if (TestiPuoliTagi[0] == puoliTagi[0])
                                 {
-                                    if (Convert.ToInt32(TestiPuoliTagi[1]) == Convert.ToInt32(puoliTagi[1]) + looppi1 && TestiPuoliTagi[2] != "Valkoinen")
+                                    if (Convert.ToInt32(TestiPuoliTagi[1]) == Convert.ToInt32(puoliTagi[1]) + looppi1)
                                     {
                                         if (TestiPuoliTagi[2] == "Musta")
                                         {
                                             testi.Enabled = true;
                                             testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                            breakki = true;
+                                            break;
+                                        }else if (TestiPuoliTagi[2] == "Valkoinen")
+                                        {
+                                            breakki = true;
                                             break;
                                         }
                                         else
@@ -269,7 +279,7 @@ namespace ShakkiProjekti
                                     }
                                     else
                                     {
-                                        break;
+
                                     }
                                 }
                                 else
@@ -278,20 +288,31 @@ namespace ShakkiProjekti
                                 }
                             }
                         }
+                        breakki = false;
                         for (int looppi2 = 1; looppi2 < 9; looppi2++)
                         {
+                            if (breakki)
+                            {
+                                break;
+                            }
                             foreach (Button testi in SallitutLiikkeet)
                             {
                                 string TestiTagi = testi.Tag.ToString();
                                 List<string> TestiPuoliTagi = TestiTagi.Split(',').ToList<string>();
                                 if (TestiPuoliTagi[0] == puoliTagi[0])
                                 {
-                                    if (Convert.ToInt32(TestiPuoliTagi[1]) == Convert.ToInt32(puoliTagi[1]) - looppi2 && TestiPuoliTagi[2] != "Valkoinen")
+                                    if (Convert.ToInt32(TestiPuoliTagi[1]) == Convert.ToInt32(puoliTagi[1]) - looppi2)
                                     {
                                         if (TestiPuoliTagi[2] == "Musta")
                                         {
                                             testi.Enabled = true;
                                             testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                            breakki = true;
+                                            break;
+                                        }
+                                        else if (TestiPuoliTagi[2] == "Valkoinen")
+                                        {
+                                            breakki = true;
                                             break;
                                         }
                                         else
@@ -302,7 +323,7 @@ namespace ShakkiProjekti
                                     }
                                     else
                                     {
-                                        break;
+
                                     }
                                 }
                                 else
@@ -311,20 +332,31 @@ namespace ShakkiProjekti
                                 }
                             }
                         }
+                        breakki = false;
                         for (int looppi3 = 1; looppi3 < 9; looppi3++)
                         {
+                            if (breakki)
+                            {
+                                break;
+                            }
                             foreach (Button testi in SallitutLiikkeet)
                             {
                                 string TestiTagi = testi.Tag.ToString();
                                 List<string> TestiPuoliTagi = TestiTagi.Split(',').ToList<string>();
                                 if (TestiPuoliTagi[1] == puoliTagi[1])
                                 {
-                                    if (Convert.ToInt32(TestiPuoliTagi[0]) == Convert.ToInt32(puoliTagi[0]) + looppi3 && TestiPuoliTagi[2] != "Valkoinen")
+                                    if (Convert.ToInt32(TestiPuoliTagi[0]) == Convert.ToInt32(puoliTagi[0]) + looppi3)
                                     {
                                         if (TestiPuoliTagi[2] == "Musta")
                                         {
                                             testi.Enabled = true;
                                             testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                            breakki = true;
+                                            break;
+                                        }
+                                        else if (TestiPuoliTagi[2] == "Valkoinen")
+                                        {
+                                            breakki = true;
                                             break;
                                         }
                                         else
@@ -335,7 +367,7 @@ namespace ShakkiProjekti
                                     }
                                     else
                                     {
-                                        break;
+   
                                     }
                                 }
                                 else
@@ -344,20 +376,31 @@ namespace ShakkiProjekti
                                 }
                             }
                         }
+                        breakki = false;
                         for (int looppi4 = 1; looppi4 < 9; looppi4++)
                         {
+                            if (breakki)
+                            {
+                                break;
+                            }
                             foreach (Button testi in SallitutLiikkeet)
                             {
                                 string TestiTagi = testi.Tag.ToString();
                                 List<string> TestiPuoliTagi = TestiTagi.Split(',').ToList<string>();
                                 if (TestiPuoliTagi[1] == puoliTagi[1])
                                 {
-                                    if (Convert.ToInt32(TestiPuoliTagi[0]) == Convert.ToInt32(puoliTagi[0]) - looppi4 && TestiPuoliTagi[2] != "Valkoinen")
+                                    if (Convert.ToInt32(TestiPuoliTagi[0]) == Convert.ToInt32(puoliTagi[0]) - looppi4)
                                     {
                                         if (TestiPuoliTagi[2] == "Musta")
                                         {
                                             testi.Enabled = true;
                                             testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                            breakki = true;
+                                            break;
+                                        }
+                                        else if (TestiPuoliTagi[2] == "Valkoinen")
+                                        {
+                                            breakki = true;
                                             break;
                                         }
                                         else
@@ -368,7 +411,7 @@ namespace ShakkiProjekti
                                     }
                                     else
                                     {
-                                        break;
+                        
                                     }
                                 }
                                 else
