@@ -580,15 +580,17 @@ namespace ShakkiProjekti
                     }
                     else if (puoliTagi[2] == "Valkoinen" && puoliTagi[3] == "Kuningatar")
                     {
+                        List<Button> SallitutLiikkeet = new List<Button>();
                         ValittuNappi = "VKuningatar";
                         Kuningatar kuningatar = new Kuningatar(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), "Valkoinen");
                         foreach (Button ruutu in this.Controls)
                         {
                             string ruutuTagi = ruutu.Tag.ToString();
                             List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
-                            if (kuningatar.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] != "Valkoinen")
+                            if (kuningatar.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && NappiTagi != ruutuTagi)
                             {
-                                ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
+                                SallitutLiikkeet.Add(ruutu);
+                                ruutu.Enabled = false;
                             }
                             else
                             {
@@ -596,6 +598,296 @@ namespace ShakkiProjekti
                                 nappi.Enabled = true;
                             }
                         }
+                        for (int looppi1 = 1; looppi1 < 9; looppi1++)
+                        {
+                            if (breakki)
+                            {
+                                break;
+                            }
+                            foreach (Button testi in SallitutLiikkeet)
+                            {
+                                string TestiTagi = testi.Tag.ToString();
+                                List<string> TestiPuoliTagi = TestiTagi.Split(',').ToList<string>();
+                                if (Convert.ToInt32(TestiPuoliTagi[0]) == Convert.ToInt32(puoliTagi[0]) + looppi1)
+                                {
+                                    if (Convert.ToInt32(TestiPuoliTagi[1]) == Convert.ToInt32(puoliTagi[1]) + looppi1)
+                                    {
+                                        if (TestiPuoliTagi[2] == "Musta")
+                                        {
+                                            testi.Enabled = true;
+                                            testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                            breakki = true;
+                                            break;
+                                        }
+
+                                        else if (TestiPuoliTagi[2] == "Valkoinen")
+                                        {
+                                            breakki = true;
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            testi.Enabled = true;
+                                            testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        breakki = false;
+                        for (int looppi2 = 1; looppi2 < 9; looppi2++)
+                        {
+                            if (breakki)
+                            {
+                                break;
+                            }
+                            foreach (Button testi in SallitutLiikkeet)
+                            {
+                                string TestiTagi = testi.Tag.ToString();
+                                List<string> TestiPuoliTagi = TestiTagi.Split(',').ToList<string>();
+                                if (Convert.ToInt32(TestiPuoliTagi[0]) == Convert.ToInt32(puoliTagi[0]) - looppi2)
+                                {
+                                    if (Convert.ToInt32(TestiPuoliTagi[1]) == Convert.ToInt32(puoliTagi[1]) - looppi2)
+                                    {
+                                        if (TestiPuoliTagi[2] == "Musta")
+                                        {
+                                            testi.Enabled = true;
+                                            testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                            breakki = true;
+                                            break;
+                                        }
+                                        else if (TestiPuoliTagi[2] == "Valkoinen")
+                                        {
+                                            breakki = true;
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            testi.Enabled = true;
+                                            testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        breakki = false;
+                        for (int looppi3 = 1; looppi3 < 9; looppi3++)
+                        {
+                            if (breakki)
+                            {
+                                break;
+                            }
+                            foreach (Button testi in SallitutLiikkeet)
+                            {
+                                string TestiTagi = testi.Tag.ToString();
+                                List<string> TestiPuoliTagi = TestiTagi.Split(',').ToList<string>();
+                                if (Convert.ToInt32(TestiPuoliTagi[1]) == Convert.ToInt32(puoliTagi[1]) - looppi3)
+                                {
+                                    if (Convert.ToInt32(TestiPuoliTagi[0]) == Convert.ToInt32(puoliTagi[0]) + looppi3)
+                                    {
+                                        if (TestiPuoliTagi[2] == "Musta")
+                                        {
+                                            testi.Enabled = true;
+                                            testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                            breakki = true;
+                                            break;
+                                        }
+                                        else if (TestiPuoliTagi[2] == "Valkoinen")
+                                        {
+                                            breakki = true;
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            testi.Enabled = true;
+                                            testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        breakki = false;
+                        for (int looppi4 = 1; looppi4 < 9; looppi4++)
+                        {
+                            if (breakki)
+                            {
+                                break;
+                            }
+                            foreach (Button testi in SallitutLiikkeet)
+                            {
+                                string TestiTagi = testi.Tag.ToString();
+                                List<string> TestiPuoliTagi = TestiTagi.Split(',').ToList<string>();
+                                if (Convert.ToInt32(TestiPuoliTagi[1]) == Convert.ToInt32(puoliTagi[1]) + looppi4)
+                                {
+                                    if (Convert.ToInt32(TestiPuoliTagi[0]) == Convert.ToInt32(puoliTagi[0]) - looppi4)
+                                    {
+                                        if (TestiPuoliTagi[2] == "Musta")
+                                        {
+                                            testi.Enabled = true;
+                                            testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                            breakki = true;
+                                            break;
+                                        }
+                                        else if (TestiPuoliTagi[2] == "Valkoinen")
+                                        {
+                                            breakki = true;
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            testi.Enabled = true;
+                                            testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        breakki = false;
+                        for (int looppi1 = 1; looppi1 < 9; looppi1++)
+                        {
+                            if (breakki)
+                            {
+                                break;
+                            }
+                            foreach (Button testi in SallitutLiikkeet)
+                            {
+                                string TestiTagi = testi.Tag.ToString();
+                                List<string> TestiPuoliTagi = TestiTagi.Split(',').ToList<string>();
+                                if (TestiPuoliTagi[0] == puoliTagi[0])
+                                {
+                                    if (Convert.ToInt32(TestiPuoliTagi[1]) == Convert.ToInt32(puoliTagi[1]) + looppi1)
+                                    {
+                                        if (TestiPuoliTagi[2] == "Musta")
+                                        {
+                                            testi.Enabled = true;
+                                            testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                            breakki = true;
+                                            break;
+                                        }
+
+                                        else if (TestiPuoliTagi[2] == "Valkoinen")
+                                        {
+                                            breakki = true;
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            testi.Enabled = true;
+                                            testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        breakki = false;
+                        for (int looppi2 = 1; looppi2 < 9; looppi2++)
+                        {
+                            if (breakki)
+                            {
+                                break;
+                            }
+                            foreach (Button testi in SallitutLiikkeet)
+                            {
+                                string TestiTagi = testi.Tag.ToString();
+                                List<string> TestiPuoliTagi = TestiTagi.Split(',').ToList<string>();
+                                if (TestiPuoliTagi[0] == puoliTagi[0])
+                                {
+                                    if (Convert.ToInt32(TestiPuoliTagi[1]) == Convert.ToInt32(puoliTagi[1]) - looppi2)
+                                    {
+                                        if (TestiPuoliTagi[2] == "Musta")
+                                        {
+                                            testi.Enabled = true;
+                                            testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                            breakki = true;
+                                            break;
+                                        }
+                                        else if (TestiPuoliTagi[2] == "Valkoinen")
+                                        {
+                                            breakki = true;
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            testi.Enabled = true;
+                                            testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        breakki = false;
+                        for (int looppi3 = 1; looppi3 < 9; looppi3++)
+                        {
+                            if (breakki)
+                            {
+                                break;
+                            }
+                            foreach (Button testi in SallitutLiikkeet)
+                            {
+                                string TestiTagi = testi.Tag.ToString();
+                                List<string> TestiPuoliTagi = TestiTagi.Split(',').ToList<string>();
+                                if (TestiPuoliTagi[1] == puoliTagi[1])
+                                {
+                                    if (Convert.ToInt32(TestiPuoliTagi[0]) == Convert.ToInt32(puoliTagi[0]) + looppi3)
+                                    {
+                                        if (TestiPuoliTagi[2] == "Musta")
+                                        {
+                                            testi.Enabled = true;
+                                            testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                            breakki = true;
+                                            break;
+                                        }
+                                        else if (TestiPuoliTagi[2] == "Valkoinen")
+                                        {
+                                            breakki = true;
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            testi.Enabled = true;
+                                            testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        breakki = false;
+                        for (int looppi4 = 1; looppi4 < 9; looppi4++)
+                        {
+                            if (breakki)
+                            {
+                                break;
+                            }
+                            foreach (Button testi in SallitutLiikkeet)
+                            {
+                                string TestiTagi = testi.Tag.ToString();
+                                List<string> TestiPuoliTagi = TestiTagi.Split(',').ToList<string>();
+                                if (TestiPuoliTagi[1] == puoliTagi[1])
+                                {
+                                    if (Convert.ToInt32(TestiPuoliTagi[0]) == Convert.ToInt32(puoliTagi[0]) - looppi4)
+                                    {
+                                        if (TestiPuoliTagi[2] == "Musta")
+                                        {
+                                            testi.Enabled = true;
+                                            testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                            breakki = true;
+                                            break;
+                                        }
+                                        else if (TestiPuoliTagi[2] == "Valkoinen")
+                                        {
+                                            breakki = true;
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            testi.Enabled = true;
+                                            testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        breakki = false;
                     }
                     else
                     {
@@ -1167,15 +1459,17 @@ namespace ShakkiProjekti
                     }
                     else if (puoliTagi[2] == "Musta" && puoliTagi[3] == "Kuningatar")
                     {
+                        List<Button> SallitutLiikkeet = new List<Button>();
                         ValittuNappi = "MKuningatar";
                         Kuningatar kuningatar = new Kuningatar(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), "Musta");
                         foreach (Button ruutu in this.Controls)
                         {
                             string ruutuTagi = ruutu.Tag.ToString();
                             List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
-                            if (kuningatar.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] != "Musta")
+                            if (kuningatar.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && NappiTagi != ruutuTagi)
                             {
-                                ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
+                                SallitutLiikkeet.Add(ruutu);
+                                ruutu.Enabled = false;
                             }
                             else
                             {
@@ -1183,6 +1477,296 @@ namespace ShakkiProjekti
                                 nappi.Enabled = true;
                             }
                         }
+                        for (int looppi1 = 1; looppi1 < 9; looppi1++)
+                        {
+                            if (breakki)
+                            {
+                                break;
+                            }
+                            foreach (Button testi in SallitutLiikkeet)
+                            {
+                                string TestiTagi = testi.Tag.ToString();
+                                List<string> TestiPuoliTagi = TestiTagi.Split(',').ToList<string>();
+                                if (Convert.ToInt32(TestiPuoliTagi[0]) == Convert.ToInt32(puoliTagi[0]) + looppi1)
+                                {
+                                    if (Convert.ToInt32(TestiPuoliTagi[1]) == Convert.ToInt32(puoliTagi[1]) + looppi1)
+                                    {
+                                        if (TestiPuoliTagi[2] == "Valkoinen")
+                                        {
+                                            testi.Enabled = true;
+                                            testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                            breakki = true;
+                                            break;
+                                        }
+
+                                        else if (TestiPuoliTagi[2] == "Musta")
+                                        {
+                                            breakki = true;
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            testi.Enabled = true;
+                                            testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        breakki = false;
+                        for (int looppi2 = 1; looppi2 < 9; looppi2++)
+                        {
+                            if (breakki)
+                            {
+                                break;
+                            }
+                            foreach (Button testi in SallitutLiikkeet)
+                            {
+                                string TestiTagi = testi.Tag.ToString();
+                                List<string> TestiPuoliTagi = TestiTagi.Split(',').ToList<string>();
+                                if (Convert.ToInt32(TestiPuoliTagi[0]) == Convert.ToInt32(puoliTagi[0]) - looppi2)
+                                {
+                                    if (Convert.ToInt32(TestiPuoliTagi[1]) == Convert.ToInt32(puoliTagi[1]) - looppi2)
+                                    {
+                                        if (TestiPuoliTagi[2] == "Valkoinen")
+                                        {
+                                            testi.Enabled = true;
+                                            testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                            breakki = true;
+                                            break;
+                                        }
+                                        else if (TestiPuoliTagi[2] == "Musta")
+                                        {
+                                            breakki = true;
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            testi.Enabled = true;
+                                            testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        breakki = false;
+                        for (int looppi3 = 1; looppi3 < 9; looppi3++)
+                        {
+                            if (breakki)
+                            {
+                                break;
+                            }
+                            foreach (Button testi in SallitutLiikkeet)
+                            {
+                                string TestiTagi = testi.Tag.ToString();
+                                List<string> TestiPuoliTagi = TestiTagi.Split(',').ToList<string>();
+                                if (Convert.ToInt32(TestiPuoliTagi[1]) == Convert.ToInt32(puoliTagi[1]) - looppi3)
+                                {
+                                    if (Convert.ToInt32(TestiPuoliTagi[0]) == Convert.ToInt32(puoliTagi[0]) + looppi3)
+                                    {
+                                        if (TestiPuoliTagi[2] == "Valkoinen")
+                                        {
+                                            testi.Enabled = true;
+                                            testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                            breakki = true;
+                                            break;
+                                        }
+                                        else if (TestiPuoliTagi[2] == "Musta")
+                                        {
+                                            breakki = true;
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            testi.Enabled = true;
+                                            testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        breakki = false;
+                        for (int looppi4 = 1; looppi4 < 9; looppi4++)
+                        {
+                            if (breakki)
+                            {
+                                break;
+                            }
+                            foreach (Button testi in SallitutLiikkeet)
+                            {
+                                string TestiTagi = testi.Tag.ToString();
+                                List<string> TestiPuoliTagi = TestiTagi.Split(',').ToList<string>();
+                                if (Convert.ToInt32(TestiPuoliTagi[1]) == Convert.ToInt32(puoliTagi[1]) + looppi4)
+                                {
+                                    if (Convert.ToInt32(TestiPuoliTagi[0]) == Convert.ToInt32(puoliTagi[0]) - looppi4)
+                                    {
+                                        if (TestiPuoliTagi[2] == "Valkoinen")
+                                        {
+                                            testi.Enabled = true;
+                                            testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                            breakki = true;
+                                            break;
+                                        }
+                                        else if (TestiPuoliTagi[2] == "Musta")
+                                        {
+                                            breakki = true;
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            testi.Enabled = true;
+                                            testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        breakki = false;
+                        for (int looppi1 = 1; looppi1 < 9; looppi1++)
+                        {
+                            if (breakki)
+                            {
+                                break;
+                            }
+                            foreach (Button testi in SallitutLiikkeet)
+                            {
+                                string TestiTagi = testi.Tag.ToString();
+                                List<string> TestiPuoliTagi = TestiTagi.Split(',').ToList<string>();
+                                if (TestiPuoliTagi[0] == puoliTagi[0])
+                                {
+                                    if (Convert.ToInt32(TestiPuoliTagi[1]) == Convert.ToInt32(puoliTagi[1]) + looppi1)
+                                    {
+                                        if (TestiPuoliTagi[2] == "Valkoinen")
+                                        {
+                                            testi.Enabled = true;
+                                            testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                            breakki = true;
+                                            break;
+                                        }
+
+                                        else if (TestiPuoliTagi[2] == "Musta")
+                                        {
+                                            breakki = true;
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            testi.Enabled = true;
+                                            testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        breakki = false;
+                        for (int looppi2 = 1; looppi2 < 9; looppi2++)
+                        {
+                            if (breakki)
+                            {
+                                break;
+                            }
+                            foreach (Button testi in SallitutLiikkeet)
+                            {
+                                string TestiTagi = testi.Tag.ToString();
+                                List<string> TestiPuoliTagi = TestiTagi.Split(',').ToList<string>();
+                                if (TestiPuoliTagi[0] == puoliTagi[0])
+                                {
+                                    if (Convert.ToInt32(TestiPuoliTagi[1]) == Convert.ToInt32(puoliTagi[1]) - looppi2)
+                                    {
+                                        if (TestiPuoliTagi[2] == "Valkoinen")
+                                        {
+                                            testi.Enabled = true;
+                                            testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                            breakki = true;
+                                            break;
+                                        }
+                                        else if (TestiPuoliTagi[2] == "Musta")
+                                        {
+                                            breakki = true;
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            testi.Enabled = true;
+                                            testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        breakki = false;
+                        for (int looppi3 = 1; looppi3 < 9; looppi3++)
+                        {
+                            if (breakki)
+                            {
+                                break;
+                            }
+                            foreach (Button testi in SallitutLiikkeet)
+                            {
+                                string TestiTagi = testi.Tag.ToString();
+                                List<string> TestiPuoliTagi = TestiTagi.Split(',').ToList<string>();
+                                if (TestiPuoliTagi[1] == puoliTagi[1])
+                                {
+                                    if (Convert.ToInt32(TestiPuoliTagi[0]) == Convert.ToInt32(puoliTagi[0]) + looppi3)
+                                    {
+                                        if (TestiPuoliTagi[2] == "Valkoinen")
+                                        {
+                                            testi.Enabled = true;
+                                            testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                            breakki = true;
+                                            break;
+                                        }
+                                        else if (TestiPuoliTagi[2] == "Musta")
+                                        {
+                                            breakki = true;
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            testi.Enabled = true;
+                                            testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        breakki = false;
+                        for (int looppi4 = 1; looppi4 < 9; looppi4++)
+                        {
+                            if (breakki)
+                            {
+                                break;
+                            }
+                            foreach (Button testi in SallitutLiikkeet)
+                            {
+                                string TestiTagi = testi.Tag.ToString();
+                                List<string> TestiPuoliTagi = TestiTagi.Split(',').ToList<string>();
+                                if (TestiPuoliTagi[1] == puoliTagi[1])
+                                {
+                                    if (Convert.ToInt32(TestiPuoliTagi[0]) == Convert.ToInt32(puoliTagi[0]) - looppi4)
+                                    {
+                                        if (TestiPuoliTagi[2] == "Valkoinen")
+                                        {
+                                            testi.Enabled = true;
+                                            testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                            breakki = true;
+                                            break;
+                                        }
+                                        else if (TestiPuoliTagi[2] == "Musta")
+                                        {
+                                            breakki = true;
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            testi.Enabled = true;
+                                            testi.BackgroundImage = Properties.Resources.VihreaNappi;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        breakki = false;
                     }
                     else
                     {
