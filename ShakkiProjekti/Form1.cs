@@ -1063,9 +1063,17 @@ namespace ShakkiProjekti
                         if (Convert.ToInt32(puoliTagi[1]) == 8)
                         {
                             nappi.Image = MustaKuningatar;
-                            string VaihettuTagi = puoliTagi[0] + "," + puoliTagi[1] + "," + puoliTagi[2] + ",Kuningatar";
+                            string VaihettuTagi = puoliTagi[0] + "," + puoliTagi[1] + ",Musta,Kuningatar";
                             nappi.Tag = VaihettuTagi;
                             ViimeTagi = VaihettuTagi;
+                            Klikit--;
+                            foreach(Button sulje in this.Controls)
+                            {
+                                if(Convert.ToString(sulje.Tag) != VaihettuTagi)
+                                {
+                                    sulje.Enabled = false;
+                                }
+                            }
                         }
                         else
                         {
