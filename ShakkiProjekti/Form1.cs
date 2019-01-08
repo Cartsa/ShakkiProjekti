@@ -556,9 +556,7 @@ namespace ShakkiProjekti
                             }
                         }
                         breakki = false;
-                    }
-
-                    
+                    }                  
                     else if (puoliTagi[2] == "Valkoinen" && puoliTagi[3] == "Kuningas")
                     {
                         ValittuNappi = "VKuningas";
@@ -1945,7 +1943,6 @@ namespace ShakkiProjekti
                 {
                     Vuoro = 1;
                 }
-
                 else if (Vuoro == 1)
                 {
                     Vuoro = 0;
