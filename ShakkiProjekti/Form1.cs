@@ -1062,27 +1062,37 @@ namespace ShakkiProjekti
                     }
                     else if(puoliTagi[2] == "Musta" && puoliTagi[3] == "Solttu")
                     {
-                        ValittuNappi = "MSolttu";
-                        Sotilas solttu = new Sotilas(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), "Musta");
-                        foreach (Button ruutu in this.Controls)
+                        if (Convert.ToInt32(puoliTagi[1]) == 8)
                         {
-                            string ruutuTagi = ruutu.Tag.ToString();
-                            List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
-                            if (solttu.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "EiNappia")
+                            nappi.Image = MustaKuningatar;
+                            string VaihettuTagi = puoliTagi[0] + "," + puoliTagi[1] + "," + puoliTagi[2] + ",Kuningatar";
+                            nappi.Tag = VaihettuTagi;
+                            ViimeTagi = VaihettuTagi;
+                        }
+                        else
+                        {
+                            ValittuNappi = "MSolttu";
+                            Sotilas solttu = new Sotilas(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), "Musta");
+                            foreach (Button ruutu in this.Controls)
                             {
-                                ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
-                            }
+                                string ruutuTagi = ruutu.Tag.ToString();
+                                List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
+                                if (solttu.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "EiNappia")
+                                {
+                                    ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
+                                }
 
-                            else if (Convert.ToInt32(puoliTagi[1]) + 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) + 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Valkoinen" ||
-                                     Convert.ToInt32(puoliTagi[1]) + 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) - 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Valkoinen")
-                            {
-                                ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
-                            }
+                                else if (Convert.ToInt32(puoliTagi[1]) + 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) + 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Valkoinen" ||
+                                         Convert.ToInt32(puoliTagi[1]) + 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) - 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Valkoinen")
+                                {
+                                    ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
+                                }
 
-                            else
-                            {
-                                ruutu.Enabled = false;
-                                nappi.Enabled = true;
+                                else
+                                {
+                                    ruutu.Enabled = false;
+                                    nappi.Enabled = true;
+                                }
                             }
                         }
                     }
