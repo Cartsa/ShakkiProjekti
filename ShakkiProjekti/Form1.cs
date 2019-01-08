@@ -1060,23 +1060,6 @@ namespace ShakkiProjekti
                     }
                     else if(puoliTagi[2] == "Musta" && puoliTagi[3] == "Solttu")
                     {
-                        if (Convert.ToInt32(puoliTagi[1]) == 8)
-                        {
-                            nappi.Image = MustaKuningatar;
-                            string VaihettuTagi = puoliTagi[0] + "," + puoliTagi[1] + ",Musta,Kuningatar";
-                            nappi.Tag = VaihettuTagi;
-                            ViimeTagi = VaihettuTagi;
-                            Klikit--;
-                            foreach(Button sulje in this.Controls)
-                            {
-                                if(Convert.ToString(sulje.Tag) != VaihettuTagi)
-                                {
-                                    sulje.Enabled = false;
-                                }
-                            }
-                        }
-                        else
-                        {
                             ValittuNappi = "MSolttu";
                             Sotilas solttu = new Sotilas(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), "Musta");
                             foreach (Button ruutu in this.Controls)
@@ -1100,7 +1083,6 @@ namespace ShakkiProjekti
                                     nappi.Enabled = true;
                                 }
                             }
-                        }
                     }
                     else if(puoliTagi[2] == "Musta" && puoliTagi[3] == "Heppa")
                     {
@@ -1806,26 +1788,43 @@ namespace ShakkiProjekti
                     }
                     else if (ValittuNappi == "MSolttu")
                     {
-                        nappi.Image = MustaSolttu;
-                        string fag = nappi.Tag.ToString();
-                        List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
-                        nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Musta,Solttu";
-                        Sotilas sotilas = new Sotilas(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), "Musta");
-                        foreach (Button ruutu in this.Controls)
+                        if (Convert.ToInt32(puoliTagi[1]) == 8)
                         {
-                            string ruutuTagi = ruutu.Tag.ToString();
-                            List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
-                            try
+                            nappi.Image = MustaKuningatar;
+                            string VaihettuTagi = puoliTagi[0] + "," + puoliTagi[1] + ",Musta,Kuningatar";
+                            nappi.Tag = VaihettuTagi;
+                            ViimeTagi = VaihettuTagi;
+                            foreach (Button sulje in this.Controls)
                             {
-                                if (Convert.ToInt32(puoliTagi[1]) + 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) + 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Valkoinen" && RuutupuoliTagi[3] == "Kuningas" ||
-                                    Convert.ToInt32(puoliTagi[1]) + 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) - 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Valkoinen" && RuutupuoliTagi[3] == "Kuningas")
+                                if (Convert.ToString(sulje.Tag) != VaihettuTagi)
                                 {
-                                    MessageBox.Show("Shakkitilanne");
+                                    sulje.Enabled = false;
                                 }
                             }
-                            catch (Exception virhe)
+                        }
+                        else
+                        {
+                            nappi.Image = MustaSolttu;
+                            string fag = nappi.Tag.ToString();
+                            List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
+                            nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Musta,Solttu";
+                            Sotilas sotilas = new Sotilas(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), "Musta");
+                            foreach (Button ruutu in this.Controls)
                             {
+                                string ruutuTagi = ruutu.Tag.ToString();
+                                List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
+                                try
+                                {
+                                    if (Convert.ToInt32(puoliTagi[1]) + 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) + 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Valkoinen" && RuutupuoliTagi[3] == "Kuningas" ||
+                                        Convert.ToInt32(puoliTagi[1]) + 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) - 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Valkoinen" && RuutupuoliTagi[3] == "Kuningas")
+                                    {
+                                        MessageBox.Show("Shakkitilanne");
+                                    }
+                                }
+                                catch (Exception virhe)
+                                {
 
+                                }
                             }
                         }
                     }
