@@ -1794,13 +1794,6 @@ namespace ShakkiProjekti
                             string VaihettuTagi = puoliTagi[0] + "," + puoliTagi[1] + ",Musta,Kuningatar";
                             nappi.Tag = VaihettuTagi;
                             ViimeTagi = VaihettuTagi;
-                            foreach (Button sulje in this.Controls)
-                            {
-                                if (Convert.ToString(sulje.Tag) != VaihettuTagi)
-                                {
-                                    sulje.Enabled = false;
-                                }
-                            }
                         }
                         else
                         {
