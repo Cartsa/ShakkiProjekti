@@ -57,6 +57,12 @@
     <Compile Include="Kuningatar.cs" />
     <Compile Include="Lahetti.cs" />
     <Compile Include="Nappula.cs" />
+    <Compile Include="NappulaValinta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NappulaValinta.Designer.cs">
+      <DependentUpon>NappulaValinta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Poyta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -69,6 +75,9 @@
     <Compile Include="Torni.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NappulaValinta.resx">
+      <DependentUpon>NappulaValinta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

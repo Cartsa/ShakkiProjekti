@@ -182,29 +182,28 @@ namespace ShakkiProjekti
                         return;
                     }
                     else if (puoliTagi[2] == "Valkoinen" && puoliTagi[3] == "Solttu")
-                    {
-                        ValittuNappi = "VSolttu";
-                        Sotilas solttu = new Sotilas(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), "Valkoinen");
-                        foreach (Button ruutu in this.Controls)
-                        {
-                            string ruutuTagi = ruutu.Tag.ToString();
-                            List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
-                            if (solttu.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "EiNappia")
-                            {
-                                ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
-                            }
-                            else if (Convert.ToInt32(puoliTagi[1]) - 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) + 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Musta" ||
-                                     Convert.ToInt32(puoliTagi[1]) - 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) - 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Musta")
-                            {
-                                ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
-
-                            }
-                            else
-                            {
-                                ruutu.Enabled = false;
-                                nappi.Enabled = true;
-                            }
-                        }
+                    {                                              
+                       ValittuNappi = "VSolttu";
+                       Sotilas solttu = new Sotilas(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), "Valkoinen");
+                       foreach (Button ruutu in this.Controls)
+                       {
+                       string ruutuTagi = ruutu.Tag.ToString();
+                       List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
+                       if (solttu.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "EiNappia")
+                       {
+                           ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
+                       }
+                       else if (Convert.ToInt32(puoliTagi[1]) - 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) + 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Musta" ||
+                                Convert.ToInt32(puoliTagi[1]) - 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) - 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Musta")
+                       {
+                            ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
+                       }
+                       else
+                       {
+                            ruutu.Enabled = false;
+                                    nappi.Enabled = true;
+                       }
+                       }                       
                     }
                     else if (puoliTagi[2] == "Valkoinen" && puoliTagi[3] == "Heppa")
                     {
@@ -909,26 +908,77 @@ namespace ShakkiProjekti
                     }
                     else if (ValittuNappi == "VSolttu")
                     {
-                        nappi.Image = ValkoinenSolttu;
-                        string fag = nappi.Tag.ToString();
-                        List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
-                        nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Valkoinen,Solttu";
-                        Sotilas sotilas = new Sotilas(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), "Valkoinen");
-                        foreach (Button ruutu in this.Controls)
+                        if (Convert.ToInt32(puoliTagi[1]) == 1)
                         {
-                            string ruutuTagi = ruutu.Tag.ToString();
-                            List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
-                            try
+                            for (int i = 5; i > 1; i++)
                             {
+                                NappulaValinta Valitse = new NappulaValinta();
+                                var Result = Valitse.ShowDialog();
+                                if (Result == DialogResult.OK)
+                                {
+                                    string muuttuu = Valitse.ValittuNappi;
+                                    if (muuttuu == "Kuningatar")
+                                    {
+                                        nappi.Image = ValkoinenKuningatar;
+                                        string VaihettuTagi = puoliTagi[0] + "," + puoliTagi[1] + ",Valkoinen,Kuningatar";
+                                        nappi.Tag = VaihettuTagi;
+                                        ViimeTagi = VaihettuTagi;
+                                        i = 0;
+                                    }
+                                    else if (muuttuu == "Torni")
+                                    {
+                                        nappi.Image = ValkoinenTorni;
+                                        string VaihettuTagi = puoliTagi[0] + "," + puoliTagi[1] + ",Valkoinen,Torni";
+                                        nappi.Tag = VaihettuTagi;
+                                        ViimeTagi = VaihettuTagi;
+                                        i = 0;
+                                    }
+                                    else if (muuttuu == "Lahetti")
+                                    {
+                                        nappi.Image = ValkoinenLahetti;
+                                        string VaihettuTagi = puoliTagi[0] + "," + puoliTagi[1] + ",Valkoinen,Lahetti";
+                                        nappi.Tag = VaihettuTagi;
+                                        ViimeTagi = VaihettuTagi;
+                                        i = 0;
+                                    }
+                                    else
+                                    {
+                                        nappi.Image = ValkoinenHeppa;
+                                        string VaihettuTagi = puoliTagi[0] + "," + puoliTagi[1] + ",Valkoinen,Heppa";
+                                        nappi.Tag = VaihettuTagi;
+                                        ViimeTagi = VaihettuTagi;
+                                        i = 0;
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Valitse nappi joksi haluat sotilaan muuttuvan");
+                                }
+                            }
+                        }
+                        else
+                        {
+                            nappi.Image = ValkoinenSolttu;
+                            string fag = nappi.Tag.ToString();
+                            List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
+                            nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Valkoinen,Solttu";
+                            Sotilas sotilas = new Sotilas(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), "Valkoinen");
+                            foreach (Button ruutu in this.Controls)
+                            {
+                                string ruutuTagi = ruutu.Tag.ToString();
+                                List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
+                                try
+                                {
                                     if (Convert.ToInt32(puoliTagi[1]) - 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) + 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Musta" && RuutupuoliTagi[3] == "Kuningas" ||
                                         Convert.ToInt32(puoliTagi[1]) - 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) - 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Musta" && RuutupuoliTagi[3] == "Kuningas")
                                     {
                                         MessageBox.Show("Shakkitilanne");
                                     }
                                 }
-                            catch (Exception virhe)
-                            {
+                                catch (Exception virhe)
+                                {
 
+                                }
                             }
                         }
                     }
@@ -1790,10 +1840,51 @@ namespace ShakkiProjekti
                     {
                         if (Convert.ToInt32(puoliTagi[1]) == 8)
                         {
-                            nappi.Image = MustaKuningatar;
-                            string VaihettuTagi = puoliTagi[0] + "," + puoliTagi[1] + ",Musta,Kuningatar";
-                            nappi.Tag = VaihettuTagi;
-                            ViimeTagi = VaihettuTagi;
+                            for (int i = 5; i > 1; i++)
+                            {
+                                NappulaValinta Valitse = new NappulaValinta();
+                                var Result = Valitse.ShowDialog();
+                                if (Result == DialogResult.OK)
+                                {
+                                    string muuttuu = Valitse.ValittuNappi;
+                                    if (muuttuu == "Kuningatar")
+                                    {
+                                        nappi.Image = MustaKuningatar;
+                                        string VaihettuTagi = puoliTagi[0] + "," + puoliTagi[1] + ",Musta,Kuningatar";
+                                        nappi.Tag = VaihettuTagi;
+                                        ViimeTagi = VaihettuTagi;
+                                        i = 0;
+                                    }
+                                    else if (muuttuu == "Torni")
+                                    {
+                                        nappi.Image = MustaTorni;
+                                        string VaihettuTagi = puoliTagi[0] + "," + puoliTagi[1] + ",Musta,Torni";
+                                        nappi.Tag = VaihettuTagi;
+                                        ViimeTagi = VaihettuTagi;
+                                        i = 0;
+                                    }
+                                    else if (muuttuu == "Lahetti")
+                                    {
+                                        nappi.Image = MustaLahetti;
+                                        string VaihettuTagi = puoliTagi[0] + "," + puoliTagi[1] + ",Musta,Lahetti";
+                                        nappi.Tag = VaihettuTagi;
+                                        ViimeTagi = VaihettuTagi;
+                                        i = 0;
+                                    }
+                                    else
+                                    {
+                                        nappi.Image = MustaHeppa;
+                                        string VaihettuTagi = puoliTagi[0] + "," + puoliTagi[1] + ",Musta,Heppa";
+                                        nappi.Tag = VaihettuTagi;
+                                        ViimeTagi = VaihettuTagi;
+                                        i = 0;
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Valitse nappi joksi haluat sotilaan muuttuvan");
+                                }
+                            }
                         }
                         else
                         {
