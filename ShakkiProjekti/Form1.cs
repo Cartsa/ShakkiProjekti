@@ -972,7 +972,7 @@ namespace ShakkiProjekti
                                     if (Convert.ToInt32(puoliTagi[1]) - 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) + 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Musta" && RuutupuoliTagi[3] == "Kuningas" ||
                                         Convert.ToInt32(puoliTagi[1]) - 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) - 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Musta" && RuutupuoliTagi[3] == "Kuningas")
                                     {
-                                        MessageBox.Show("Shakkitilanne");
+                                        MessageBox.Show("Shakki");
                                     }
                                 }
                                 catch (Exception virhe)
@@ -997,7 +997,7 @@ namespace ShakkiProjekti
                             {
                                 if (hevonen.SallittuLiike(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "Musta" && RuutupuoliTagi[3] == "Kuningas")
                                 {
-                                    MessageBox.Show("Shakkitilanne");
+                                    MessageBox.Show("Shakki");
                                 }
                             }
                             catch (Exception virhe)
@@ -1180,6 +1180,7 @@ namespace ShakkiProjekti
                     }
                     else if (ValittuNappi == "VLahetti")
                     {
+                        List<Button> SallitutLiikkeet = new List<Button>();
                         nappi.Image = ValkoinenLahetti;
                         string fag = nappi.Tag.ToString();
                         List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
@@ -1191,15 +1192,162 @@ namespace ShakkiProjekti
                             List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
                             try
                             {
-                                if (lahetti.SallittuLiike(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "Musta" && RuutupuoliTagi[3] == "Kuningas")
+                                if (lahetti.SallittuLiike(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && NappiTagi != ruutuTagi)
                                 {
-                                    MessageBox.Show("Shakkitilanne");
+                                    SallitutLiikkeet.Add(ruutu);
                                 }
                             }
                             catch (Exception virhe)
                             {
 
                             }
+                        }
+                        try
+                        {
+                            for (int looppi1 = 1; looppi1 < 9; looppi1++)
+                            {
+                                if (breakki)
+                                {
+                                    break;
+                                }
+                                foreach (Button testi in SallitutLiikkeet)
+                                {
+                                    string TestiTagi = testi.Tag.ToString();
+                                    List<string> TestiPuoliTagi = TestiTagi.Split(',').ToList<string>();
+                                    if (TestiPuoliTagi[0] == puoliTagi[0])
+                                    {
+                                        if (Convert.ToInt32(TestiPuoliTagi[1]) == Convert.ToInt32(puoliTagi[1]) + looppi1)
+                                        {
+                                            if (TestiPuoliTagi[2] == "Musta" && TestiPuoliTagi[3] == "Kuningas")
+                                            {
+                                                MessageBox.Show("Shakki");
+                                                breakki = true;
+                                                break;
+                                            }
+                                            else if (TestiPuoliTagi[2] == "Musta")
+                                            {
+                                                breakki = true;
+                                                break;
+                                            }
+                                            else if (TestiPuoliTagi[2] == "Valkoinen")
+                                            {
+                                                breakki = true;
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            breakki = false;
+                            for (int looppi2 = 1; looppi2 < 9; looppi2++)
+                            {
+                                if (breakki)
+                                {
+                                    break;
+                                }
+                                foreach (Button testi in SallitutLiikkeet)
+                                {
+                                    string TestiTagi = testi.Tag.ToString();
+                                    List<string> TestiPuoliTagi = TestiTagi.Split(',').ToList<string>();
+                                    if (TestiPuoliTagi[0] == puoliTagi[0])
+                                    {
+                                        if (Convert.ToInt32(TestiPuoliTagi[1]) == Convert.ToInt32(puoliTagi[1]) - looppi2)
+                                        {
+                                            if (TestiPuoliTagi[2] == "Musta" && TestiPuoliTagi[3] == "Kuningas")
+                                            {
+                                                MessageBox.Show("Shakki");
+                                                breakki = true;
+                                                break;
+                                            }
+                                            else if (TestiPuoliTagi[2] == "Musta")
+                                            {
+                                                breakki = true;
+                                                break;
+                                            }
+                                            else if (TestiPuoliTagi[2] == "Valkoinen")
+                                            {
+                                                breakki = true;
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            breakki = false;
+                            for (int looppi3 = 1; looppi3 < 9; looppi3++)
+                            {
+                                if (breakki)
+                                {
+                                    break;
+                                }
+                                foreach (Button testi in SallitutLiikkeet)
+                                {
+                                    string TestiTagi = testi.Tag.ToString();
+                                    List<string> TestiPuoliTagi = TestiTagi.Split(',').ToList<string>();
+                                    if (TestiPuoliTagi[1] == puoliTagi[1])
+                                    {
+                                        if (Convert.ToInt32(TestiPuoliTagi[0]) == Convert.ToInt32(puoliTagi[0]) + looppi3)
+                                        {
+                                            if (TestiPuoliTagi[2] == "Musta" && TestiPuoliTagi[3] == "Kuningas")
+                                            {
+                                                MessageBox.Show("Shakki");
+                                                breakki = true;
+                                                break;
+                                            }
+                                            else if (TestiPuoliTagi[2] == "Musta")
+                                            {
+                                                breakki = true;
+                                                break;
+                                            }
+                                            else if (TestiPuoliTagi[2] == "Valkoinen")
+                                            {
+                                                breakki = true;
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            breakki = false;
+                            for (int looppi4 = 1; looppi4 < 9; looppi4++)
+                            {
+                                if (breakki)
+                                {
+                                    break;
+                                }
+                                foreach (Button testi in SallitutLiikkeet)
+                                {
+                                    string TestiTagi = testi.Tag.ToString();
+                                    List<string> TestiPuoliTagi = TestiTagi.Split(',').ToList<string>();
+                                    if (TestiPuoliTagi[1] == puoliTagi[1])
+                                    {
+                                        if (Convert.ToInt32(TestiPuoliTagi[0]) == Convert.ToInt32(puoliTagi[0]) - looppi4)
+                                        {
+                                            if (TestiPuoliTagi[2] == "Musta" && TestiPuoliTagi[3] == "Kuningas")
+                                            {
+                                                MessageBox.Show("Shakki");
+                                                breakki = true;
+                                                break;
+                                            }
+                                            if (TestiPuoliTagi[2] == "Musta")
+                                            {
+                                                breakki = true;
+                                                break;
+                                            }
+                                            else if (TestiPuoliTagi[2] == "Valkoinen")
+                                            {
+                                                breakki = true;
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            breakki = false;
+                        }
+                        catch
+                        {
+
                         }
                     }
                     else if (ValittuNappi == "VKuningas")
@@ -1224,7 +1372,7 @@ namespace ShakkiProjekti
                             {
                                 if (kuningatar.SallittuLiike(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "Musta" && RuutupuoliTagi[3] == "Kuningas")
                                 {
-                                    MessageBox.Show("Shakkitilanne");
+                                    MessageBox.Show("Shakki");
                                 }
                             }catch(Exception virhe)
                             {
@@ -2050,7 +2198,7 @@ namespace ShakkiProjekti
                                     if (Convert.ToInt32(puoliTagi[1]) + 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) + 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Valkoinen" && RuutupuoliTagi[3] == "Kuningas" ||
                                         Convert.ToInt32(puoliTagi[1]) + 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) - 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Valkoinen" && RuutupuoliTagi[3] == "Kuningas")
                                     {
-                                        MessageBox.Show("Shakkitilanne");
+                                        MessageBox.Show("Shakki");
                                     }
                                 }
                                 catch (Exception virhe)
@@ -2075,7 +2223,7 @@ namespace ShakkiProjekti
                             {
                                 if (hevonen.SallittuLiike(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "Valkoinen" && RuutupuoliTagi[3] == "Kuningas")
                                 {
-                                    MessageBox.Show("Shakkitilanne");
+                                    MessageBox.Show("Shakki");
                                 }
                             }
                             catch (Exception virhe)
@@ -2258,6 +2406,7 @@ namespace ShakkiProjekti
                     }
                     else if (ValittuNappi == "MLahetti")
                     {
+                        List<Button> SallitutLiikkeet = new List<Button>();
                         nappi.Image = MustaLahetti;
                         string fag = nappi.Tag.ToString();
                         List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
@@ -2269,15 +2418,162 @@ namespace ShakkiProjekti
                             List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
                             try
                             {
-                                if (lahetti.SallittuLiike(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "Valkoinen" && RuutupuoliTagi[3] == "Kuningas")
+                                if (lahetti.SallittuLiike(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && NappiTagi != ruutuTagi)
                                 {
-                                    MessageBox.Show("Shakkitilanne");
+                                    SallitutLiikkeet.Add(ruutu);
                                 }
                             }
                             catch (Exception virhe)
                             {
 
                             }
+                        }
+                        try
+                        {
+                            for (int looppi1 = 1; looppi1 < 9; looppi1++)
+                            {
+                                if (breakki)
+                                {
+                                    break;
+                                }
+                                foreach (Button testi in SallitutLiikkeet)
+                                {
+                                    string TestiTagi = testi.Tag.ToString();
+                                    List<string> TestiPuoliTagi = TestiTagi.Split(',').ToList<string>();
+                                    if (Convert.ToInt32(TestiPuoliTagi[0]) == Convert.ToInt32(puoliTagi[0]) + looppi1)
+                                    {
+                                        if (Convert.ToInt32(TestiPuoliTagi[1]) == Convert.ToInt32(puoliTagi[1]) + looppi1)
+                                        {
+                                            if (TestiPuoliTagi[2] == "Valkoinen" && TestiPuoliTagi[3] == "Kuningas")
+                                            {
+                                                MessageBox.Show("Shakki");
+                                                breakki = true;
+                                                break;
+                                            }
+                                            else if (TestiPuoliTagi[2] == "Musta")
+                                            {
+                                                breakki = true;
+                                                break;
+                                            }
+                                            else if (TestiPuoliTagi[2] == "Valkoinen")
+                                            {
+                                                breakki = true;
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            breakki = false;
+                            for (int looppi2 = 1; looppi2 < 9; looppi2++)
+                            {
+                                if (breakki)
+                                {
+                                    break;
+                                }
+                                foreach (Button testi in SallitutLiikkeet)
+                                {
+                                    string TestiTagi = testi.Tag.ToString();
+                                    List<string> TestiPuoliTagi = TestiTagi.Split(',').ToList<string>();
+                                    if (Convert.ToInt32(TestiPuoliTagi[0]) == Convert.ToInt32(puoliTagi[0]) - looppi2)
+                                    {
+                                        if (Convert.ToInt32(TestiPuoliTagi[1]) == Convert.ToInt32(puoliTagi[1]) - looppi2)
+                                        {
+                                            if (TestiPuoliTagi[2] == "Valkoinen" && TestiPuoliTagi[3] == "Kuningas")
+                                            {
+                                                MessageBox.Show("Shakki");
+                                                breakki = true;
+                                                break;
+                                            }
+                                            else if (TestiPuoliTagi[2] == "Musta")
+                                            {
+                                                breakki = true;
+                                                break;
+                                            }
+                                            else if (TestiPuoliTagi[2] == "Valkoinen")
+                                            {
+                                                breakki = true;
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            breakki = false;
+                            for (int looppi3 = 1; looppi3 < 9; looppi3++)
+                            {
+                                if (breakki)
+                                {
+                                    break;
+                                }
+                                foreach (Button testi in SallitutLiikkeet)
+                                {
+                                    string TestiTagi = testi.Tag.ToString();
+                                    List<string> TestiPuoliTagi = TestiTagi.Split(',').ToList<string>();
+                                    if (Convert.ToInt32(TestiPuoliTagi[1]) == Convert.ToInt32(puoliTagi[1]) + looppi3)
+                                    {
+                                        if (Convert.ToInt32(TestiPuoliTagi[0]) == Convert.ToInt32(puoliTagi[0]) - looppi3)
+                                        {
+                                            if (TestiPuoliTagi[2] == "Valkoinen" && TestiPuoliTagi[3] == "Kuningas")
+                                            {
+                                                MessageBox.Show("Shakki");
+                                                breakki = true;
+                                                break;
+                                            }
+                                            else if (TestiPuoliTagi[2] == "Musta")
+                                            {
+                                                breakki = true;
+                                                break;
+                                            }
+                                            else if (TestiPuoliTagi[2] == "Valkoinen")
+                                            {
+                                                breakki = true;
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            breakki = false;
+                            for (int looppi4 = 1; looppi4 < 9; looppi4++)
+                            {
+                                if (breakki)
+                                {
+                                    break;
+                                }
+                                foreach (Button testi in SallitutLiikkeet)
+                                {
+                                    string TestiTagi = testi.Tag.ToString();
+                                    List<string> TestiPuoliTagi = TestiTagi.Split(',').ToList<string>();
+                                    if (Convert.ToInt32(TestiPuoliTagi[1]) == Convert.ToInt32(puoliTagi[1]) - 1)
+                                    {
+                                        if (Convert.ToInt32(TestiPuoliTagi[0]) == Convert.ToInt32(puoliTagi[0]) + looppi4)
+                                        {
+                                            if (TestiPuoliTagi[2] == "Valkoinen" && TestiPuoliTagi[3] == "Kuningas")
+                                            {
+                                                MessageBox.Show("Shakki");
+                                                breakki = true;
+                                                break;
+                                            }
+                                            if (TestiPuoliTagi[2] == "Musta")
+                                            {
+                                                breakki = true;
+                                                break;
+                                            }
+                                            else if (TestiPuoliTagi[2] == "Valkoinen")
+                                            {
+                                                breakki = true;
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            breakki = false;
+                        }
+                        catch
+                        {
+
                         }
                     }
                     else if (ValittuNappi == "MKuningas")
@@ -2302,7 +2598,7 @@ namespace ShakkiProjekti
                             {
                                 if (kuningatar.SallittuLiike(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "Valkoinen" && RuutupuoliTagi[3] == "Kuningas")
                                 {
-                                    MessageBox.Show("Shakkitilanne");
+                                    MessageBox.Show("Shakki");
                                 }
                             }
                             catch (Exception virhe)
