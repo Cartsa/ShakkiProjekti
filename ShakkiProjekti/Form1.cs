@@ -1048,7 +1048,7 @@ namespace ShakkiProjekti
                                         {
                                             if (TestiPuoliTagi[2] == "Musta" && TestiPuoliTagi[3] == "Kuningas")
                                             {
-                                                MessageBox.Show("Shakki tilanne");
+                                                MessageBox.Show("Shakki");
                                                 breakki = true;
                                                 break;
                                             }
@@ -1083,7 +1083,7 @@ namespace ShakkiProjekti
                                         {
                                             if (TestiPuoliTagi[2] == "Musta" && TestiPuoliTagi[3] == "Kuningas")
                                             {
-                                                MessageBox.Show("Shakki tilanne");
+                                                MessageBox.Show("Shakki");
                                                 breakki = true;
                                                 break;
                                             }
@@ -1118,7 +1118,7 @@ namespace ShakkiProjekti
                                         {
                                             if (TestiPuoliTagi[2] == "Musta" && TestiPuoliTagi[3] == "Kuningas")
                                             {
-                                                MessageBox.Show("Shakki tilanne");
+                                                MessageBox.Show("Shakki");
                                                 breakki = true;
                                                 break;
                                             }
@@ -1153,7 +1153,7 @@ namespace ShakkiProjekti
                                         {
                                             if (TestiPuoliTagi[2] == "Musta" && TestiPuoliTagi[3] == "Kuningas")
                                             {
-                                                MessageBox.Show("Shakki tilanne");
+                                                MessageBox.Show("Shakki");
                                                 breakki = true;
                                                 break;
                                             }
@@ -2126,7 +2126,7 @@ namespace ShakkiProjekti
                                         {
                                             if (TestiPuoliTagi[2] == "Valkoinen" && TestiPuoliTagi[3] == "Kuningas")
                                             {
-                                                MessageBox.Show("Shakki tilanne");
+                                                MessageBox.Show("Shakki");
                                                 breakki = true;
                                                 break;
                                             }
@@ -2161,7 +2161,7 @@ namespace ShakkiProjekti
                                         {
                                             if (TestiPuoliTagi[2] == "Valkoinen" && TestiPuoliTagi[3] == "Kuningas")
                                             {
-                                                MessageBox.Show("Shakki tilanne");
+                                                MessageBox.Show("Shakki");
                                                 breakki = true;
                                                 break;
                                             }
@@ -2196,7 +2196,7 @@ namespace ShakkiProjekti
                                         {
                                             if (TestiPuoliTagi[2] == "Valkoinen" && TestiPuoliTagi[3] == "Kuningas")
                                             {
-                                                MessageBox.Show("Shakki tilanne");
+                                                MessageBox.Show("Shakki");
                                                 breakki = true;
                                                 break;
                                             }
@@ -2231,7 +2231,7 @@ namespace ShakkiProjekti
                                         {
                                             if (TestiPuoliTagi[2] == "Valkoinen" && TestiPuoliTagi[3] == "Kuningas")
                                             {
-                                                MessageBox.Show("Shakki tilanne");
+                                                MessageBox.Show("Shakki");
                                                 breakki = true;
                                                 break;
                                             }
