@@ -13,8 +13,10 @@ namespace ShakkiProjekti
     public partial class Form1 : Form
     {
         int Vuoro = 0;
+        int Vuorot = 0;
         int Valittu = 0;
         int Klikit = 0;
+        bool PeliOhi = false;
         string ValittuNappi;
         Button klikattuNappi;
         Bitmap MustaSolttu = Properties.Resources.ShakkiSolttu;
@@ -182,28 +184,28 @@ namespace ShakkiProjekti
                         return;
                     }
                     else if (puoliTagi[2] == "Valkoinen" && puoliTagi[3] == "Solttu")
-                    {                                              
-                       ValittuNappi = "VSolttu";
-                       Sotilas solttu = new Sotilas(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), "Valkoinen");
-                       foreach (Button ruutu in this.Controls)
-                       {
-                       string ruutuTagi = ruutu.Tag.ToString();
-                       List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
-                       if (solttu.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "EiNappia")
-                       {
-                           ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
-                       }
-                       else if (Convert.ToInt32(puoliTagi[1]) - 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) + 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Musta" ||
-                                Convert.ToInt32(puoliTagi[1]) - 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) - 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Musta")
-                       {
-                            ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
-                       }
-                       else
-                       {
-                            ruutu.Enabled = false;
-                                    nappi.Enabled = true;
-                       }
-                       }                       
+                    {
+                        ValittuNappi = "VSolttu";
+                        Sotilas solttu = new Sotilas(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), "Valkoinen");
+                        foreach (Button ruutu in this.Controls)
+                        {
+                            string ruutuTagi = ruutu.Tag.ToString();
+                            List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
+                            if (solttu.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "EiNappia")
+                            {
+                                ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
+                            }
+                            else if (Convert.ToInt32(puoliTagi[1]) - 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) + 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Musta" ||
+                                     Convert.ToInt32(puoliTagi[1]) - 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) - 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Musta")
+                            {
+                                ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
+                            }
+                            else
+                            {
+                                ruutu.Enabled = false;
+                                nappi.Enabled = true;
+                            }
+                        }
                     }
                     else if (puoliTagi[2] == "Valkoinen" && puoliTagi[3] == "Heppa")
                     {
@@ -408,7 +410,7 @@ namespace ShakkiProjekti
                             {
                                 ruutu.Enabled = false;
                                 nappi.Enabled = true;
-                            }  
+                            }
                         }
                         for (int looppi1 = 1; looppi1 < 9; looppi1++)
                         {
@@ -555,7 +557,7 @@ namespace ShakkiProjekti
                             }
                         }
                         breakki = false;
-                    }                  
+                    }
                     else if (puoliTagi[2] == "Valkoinen" && puoliTagi[3] == "Kuningas")
                     {
                         ValittuNappi = "VKuningas";
@@ -1028,7 +1030,7 @@ namespace ShakkiProjekti
                             catch (Exception virhe)
                             {
 
-                            }                         
+                            }
                         }
                         try
                         {
@@ -1061,7 +1063,7 @@ namespace ShakkiProjekti
                                             {
                                                 breakki = true;
                                                 break;
-                                            }                                           
+                                            }
                                         }
                                     }
                                 }
@@ -1087,7 +1089,7 @@ namespace ShakkiProjekti
                                                 breakki = true;
                                                 break;
                                             }
-                                            else if(TestiPuoliTagi[2] == "Musta")
+                                            else if (TestiPuoliTagi[2] == "Musta")
                                             {
                                                 breakki = true;
                                                 break;
@@ -1096,7 +1098,7 @@ namespace ShakkiProjekti
                                             {
                                                 breakki = true;
                                                 break;
-                                            }                                         
+                                            }
                                         }
                                     }
                                 }
@@ -1131,7 +1133,7 @@ namespace ShakkiProjekti
                                             {
                                                 breakki = true;
                                                 break;
-                                            }                                      
+                                            }
                                         }
                                     }
                                 }
@@ -1367,8 +1369,8 @@ namespace ShakkiProjekti
                         Kuningatar kuningatar = new Kuningatar(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), "Valkoinen");
                         foreach (Button ruutu in this.Controls)
                         {
-                                string ruutuTagi = ruutu.Tag.ToString();
-                                List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
+                            string ruutuTagi = ruutu.Tag.ToString();
+                            List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
                             try
                             {
                                 if (kuningatar.SallittuLiike(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && NappiTagi != ruutuTagi)
@@ -1378,7 +1380,7 @@ namespace ShakkiProjekti
                             }
                             catch (Exception virhe)
                             {
-                               
+
                             }
                         }
                         try
@@ -1693,33 +1695,33 @@ namespace ShakkiProjekti
                     {
                         return;
                     }
-                    else if(puoliTagi[2] == "Musta" && puoliTagi[3] == "Solttu")
+                    else if (puoliTagi[2] == "Musta" && puoliTagi[3] == "Solttu")
                     {
-                            ValittuNappi = "MSolttu";
-                            Sotilas solttu = new Sotilas(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), "Musta");
-                            foreach (Button ruutu in this.Controls)
+                        ValittuNappi = "MSolttu";
+                        Sotilas solttu = new Sotilas(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), "Musta");
+                        foreach (Button ruutu in this.Controls)
+                        {
+                            string ruutuTagi = ruutu.Tag.ToString();
+                            List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
+                            if (solttu.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "EiNappia")
                             {
-                                string ruutuTagi = ruutu.Tag.ToString();
-                                List<string> RuutupuoliTagi = ruutuTagi.Split(',').ToList<string>();
-                                if (solttu.SallittuLiike(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), Convert.ToInt32(RuutupuoliTagi[0]), Convert.ToInt32(RuutupuoliTagi[1])) && RuutupuoliTagi[2] == "EiNappia")
-                                {
-                                    ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
-                                }
-
-                                else if (Convert.ToInt32(puoliTagi[1]) + 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) + 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Valkoinen" ||
-                                         Convert.ToInt32(puoliTagi[1]) + 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) - 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Valkoinen")
-                                {
-                                    ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
-                                }
-
-                                else
-                                {
-                                    ruutu.Enabled = false;
-                                    nappi.Enabled = true;
-                                }
+                                ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
                             }
+
+                            else if (Convert.ToInt32(puoliTagi[1]) + 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) + 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Valkoinen" ||
+                                     Convert.ToInt32(puoliTagi[1]) + 1 == Convert.ToInt32(RuutupuoliTagi[1]) && Convert.ToInt32(puoliTagi[0]) - 1 == Convert.ToInt32(RuutupuoliTagi[0]) && RuutupuoliTagi[2] == "Valkoinen")
+                            {
+                                ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
+                            }
+
+                            else
+                            {
+                                ruutu.Enabled = false;
+                                nappi.Enabled = true;
+                            }
+                        }
                     }
-                    else if(puoliTagi[2] == "Musta" && puoliTagi[3] == "Heppa")
+                    else if (puoliTagi[2] == "Musta" && puoliTagi[3] == "Heppa")
                     {
                         ValittuNappi = "MHeppa";
                         Hevonen Heppa = new Hevonen(Convert.ToInt32(puoliTagi[0]), Convert.ToInt32(puoliTagi[1]), "Musta");
@@ -1731,7 +1733,7 @@ namespace ShakkiProjekti
                             {
                                 ruutu.BackgroundImage = Properties.Resources.VihreaNappi;
                             }
-                            
+
                             else
                             {
                                 ruutu.Enabled = false;
@@ -1739,7 +1741,7 @@ namespace ShakkiProjekti
                             }
                         }
                     }
-                    else if(puoliTagi[2] == "Musta" && puoliTagi[3] == "Torni")
+                    else if (puoliTagi[2] == "Musta" && puoliTagi[3] == "Torni")
                     {
                         List<Button> SallitutLiikkeet = new List<Button>();
                         ValittuNappi = "MTorni";
@@ -3193,9 +3195,9 @@ namespace ShakkiProjekti
                     string nappitagi = klikattuNappi.Tag.ToString();
                     List<string> nappipuoliTagi = nappitagi.Split(',').ToList<string>();
                     klikattuNappi.Tag = nappipuoliTagi[0] + "," + nappipuoliTagi[1] + "," + "EiNappia";
-                    Valittu = 0;                  
-                }              
+                    Valittu = 0;
                 }
+            }
             Klikit++;
             if (Klikit == 2)
             {
@@ -3208,6 +3210,43 @@ namespace ShakkiProjekti
                     Vuoro = 0;
                 }
                 Klikit = 0;
+                Vuorot++;
+                PeliOhi = true;
+
+                if (PeliOhi == true)
+                {
+                    Lopetus Valitse = new Lopetus();
+                    var Result = Valitse.ShowDialog();
+                    if (Result == DialogResult.OK)
+                    {
+                        string LoppuValinta = Valitse.ValittuNappi;
+                        if (LoppuValinta == "UusiPeli")
+                        {
+                            Application.Restart();
+                        }
+                        else if (LoppuValinta == "Tarkistele")
+                        {
+                            Tarkistelu TarkisteluValinta = new Tarkistelu();
+                            var TarkisteluResult = TarkisteluValinta.ShowDialog();
+                            if (TarkisteluResult == DialogResult.OK)
+                            {
+                                string TValinta = TarkisteluValinta.ValittuNappi;
+                                if (TValinta == "Sallittu")
+                                {
+                                    
+                                }
+                                else
+                                {
+                                    
+                                }
+                            }
+                        }
+                        else
+                        {
+                            Application.Exit();
+                        }
+                    }
+                }
             }
         }
     }
