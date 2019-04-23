@@ -18,6 +18,23 @@ namespace ShakkiProjekti
             InitializeComponent();
         }
 
+        public Lopetus(string voittaja)
+        {
+            InitializeComponent();
+            if(voittaja == "Valkoinen")
+            {
+                label1.Text = "Voittaja on " + voittaja + " pelaaja";
+                Point Sijainti = new Point(58, 11);
+                label1.Location = Sijainti;
+            }else if(voittaja == "Musta")
+            {
+                label1.Text = "Voittaja on " + voittaja + " pelaaja";
+                Point Sijainti = new Point(68, 11);
+                label1.Location = Sijainti;
+            }
+            
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             this.ValittuNappi = "UusiPeli";

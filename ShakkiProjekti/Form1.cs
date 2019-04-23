@@ -33,6 +33,7 @@ namespace ShakkiProjekti
         Bitmap ValkoinenKuningas = Properties.Resources.ValkoinenShakkiKunkku;
         string ViimeTagi;
         bool breakki = false;
+        bool NappiLiikkuminenPeliOhi = false;
 
         public Form1()
         {
@@ -965,6 +966,13 @@ namespace ShakkiProjekti
                             List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
                             nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Valkoinen,Solttu";
                             Sotilas sotilas = new Sotilas(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), "Valkoinen");
+                            if (fagpuoliTagi[2] != "EiNappia")
+                            {
+                                if (fagpuoliTagi[2] == "Musta" && fagpuoliTagi[3] == "Kuningas")
+                                {
+                                    Peliohi("Valkoinen");
+                                }
+                            }
                             foreach (Button ruutu in this.Controls)
                             {
                                 string ruutuTagi = ruutu.Tag.ToString();
@@ -991,6 +999,13 @@ namespace ShakkiProjekti
                         List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
                         nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Valkoinen,Heppa";
                         Hevonen hevonen = new Hevonen(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), "Valkoinen");
+                        if (fagpuoliTagi[2] != "EiNappia")
+                        {
+                            if (fagpuoliTagi[2] == "Musta" && fagpuoliTagi[3] == "Kuningas")
+                            {
+                                Peliohi("Valkoinen");
+                            }
+                        }
                         foreach (Button ruutu in this.Controls)
                         {
                             string ruutuTagi = ruutu.Tag.ToString();
@@ -1016,6 +1031,13 @@ namespace ShakkiProjekti
                         List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
                         nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Valkoinen,Torni";
                         Torni torni = new Torni(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), "Valkoinen");
+                        if (fagpuoliTagi[2] != "EiNappia")
+                        {
+                            if (fagpuoliTagi[2] == "Musta" && fagpuoliTagi[3] == "Kuningas")
+                            {
+                                Peliohi("Valkoinen");
+                            }
+                        }
                         foreach (Button ruutu in this.Controls)
                         {
                             string ruutuTagi = ruutu.Tag.ToString();
@@ -1188,6 +1210,13 @@ namespace ShakkiProjekti
                         List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
                         nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Valkoinen,Lahetti";
                         Lahetti lahetti = new Lahetti(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), "Valkoinen");
+                        if (fagpuoliTagi[2] != "EiNappia")
+                        {
+                            if (fagpuoliTagi[2] == "Musta" && fagpuoliTagi[3] == "Kuningas")
+                            {
+                                Peliohi("Valkoinen");
+                            }
+                        }
                         foreach (Button ruutu in this.Controls)
                         {
                             string ruutuTagi = ruutu.Tag.ToString();
@@ -1358,6 +1387,14 @@ namespace ShakkiProjekti
                         string fag = nappi.Tag.ToString();
                         List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
                         nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Valkoinen,Kuningas";
+                        if (fagpuoliTagi[2] != "EiNappia")
+                        {
+                            if (fagpuoliTagi[2] == "Musta" && fagpuoliTagi[3] == "Kuningas")
+                            {
+                                Peliohi("Valkoinen");
+                            }
+                        }
+
                     }
                     else if (ValittuNappi == "VKuningatar")
                     {
@@ -1367,6 +1404,13 @@ namespace ShakkiProjekti
                         List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
                         nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Valkoinen,Kuningatar";
                         Kuningatar kuningatar = new Kuningatar(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), "Valkoinen");
+                        if (fagpuoliTagi[2] != "EiNappia")
+                        {
+                            if (fagpuoliTagi[2] == "Musta" && fagpuoliTagi[3] == "Kuningas")
+                            {
+                                Peliohi("Valkoinen");
+                            }
+                        }
                         foreach (Button ruutu in this.Controls)
                         {
                             string ruutuTagi = ruutu.Tag.ToString();
@@ -2480,6 +2524,13 @@ namespace ShakkiProjekti
                             List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
                             nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Musta,Solttu";
                             Sotilas sotilas = new Sotilas(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), "Musta");
+                            if (fagpuoliTagi[2] != "EiNappia")
+                            {
+                                if (fagpuoliTagi[2] == "Valkoinen" && fagpuoliTagi[3] == "Kuningas")
+                                {
+                                    Peliohi("Musta");
+                                }
+                            }
                             foreach (Button ruutu in this.Controls)
                             {
                                 string ruutuTagi = ruutu.Tag.ToString();
@@ -2506,6 +2557,13 @@ namespace ShakkiProjekti
                         List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
                         nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Musta,Heppa";
                         Hevonen hevonen = new Hevonen(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), "Musta");
+                        if (fagpuoliTagi[2] != "EiNappia")
+                        {
+                            if (fagpuoliTagi[2] == "Valkoinen" && fagpuoliTagi[3] == "Kuningas")
+                            {
+                                Peliohi("Musta");
+                            }
+                        }
                         foreach (Button ruutu in this.Controls)
                         {
                             string ruutuTagi = ruutu.Tag.ToString();
@@ -2531,6 +2589,13 @@ namespace ShakkiProjekti
                         List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
                         nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Musta,Torni";
                         Torni torni = new Torni(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), "Musta");
+                        if (fagpuoliTagi[2] != "EiNappia")
+                        {
+                            if (fagpuoliTagi[2] == "Valkoinen" && fagpuoliTagi[3] == "Kuningas")
+                            {
+                                Peliohi("Musta");
+                            }
+                        }
                         foreach (Button ruutu in this.Controls)
                         {
                             string ruutuTagi = ruutu.Tag.ToString();
@@ -2703,6 +2768,13 @@ namespace ShakkiProjekti
                         List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
                         nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Musta,Lahetti";
                         Lahetti lahetti = new Lahetti(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), "Musta");
+                        if (fagpuoliTagi[2] != "EiNappia")
+                        {
+                            if (fagpuoliTagi[2] == "Valkoinen" && fagpuoliTagi[3] == "Kuningas")
+                            {
+                                Peliohi("Musta");
+                            }
+                        }
                         foreach (Button ruutu in this.Controls)
                         {
                             string ruutuTagi = ruutu.Tag.ToString();
@@ -2873,6 +2945,13 @@ namespace ShakkiProjekti
                         string fag = nappi.Tag.ToString();
                         List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
                         nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Musta,Kuningas";
+                        if (fagpuoliTagi[2] != "EiNappia")
+                        {
+                            if (fagpuoliTagi[2] == "Valkoinen" && fagpuoliTagi[3] == "Kuningas")
+                            {
+                                Peliohi("Musta");
+                            }
+                        }
                     }
                     else if (ValittuNappi == "MKuningatar")
                     {
@@ -2882,6 +2961,13 @@ namespace ShakkiProjekti
                         List<string> fagpuoliTagi = fag.Split(',').ToList<string>();
                         nappi.Tag = fagpuoliTagi[0] + "," + fagpuoliTagi[1] + "," + "Musta,Kuningatar";
                         Kuningatar kuningatar = new Kuningatar(Convert.ToInt32(fagpuoliTagi[0]), Convert.ToInt32(fagpuoliTagi[1]), "Musta");
+                        if (fagpuoliTagi[2] != "EiNappia")
+                        {
+                            if (fagpuoliTagi[2] == "Valkoinen" && fagpuoliTagi[3] == "Kuningas")
+                            {
+                                Peliohi("Musta");
+                            }
+                        }
                         foreach (Button ruutu in this.Controls)
                         {
                             string ruutuTagi = ruutu.Tag.ToString();
@@ -3210,41 +3296,52 @@ namespace ShakkiProjekti
                     Vuoro = 0;
                 }
                 Klikit = 0;
-                Vuorot++;
-                PeliOhi = true;
-
-                if (PeliOhi == true)
+                Vuorot++; 
+            }
+            if (NappiLiikkuminenPeliOhi)
+            {
+                foreach(Button disable in this.Controls)
                 {
-                    Lopetus Valitse = new Lopetus();
-                    var Result = Valitse.ShowDialog();
-                    if (Result == DialogResult.OK)
+                    disable.Enabled = false;
+                }
+            }
+        }
+
+        private void Peliohi(string Voittaja)
+        {
+            PeliOhi = true;
+
+            if (PeliOhi == true)
+            {
+                Lopetus Valitse = new Lopetus(Voittaja);
+                var Result = Valitse.ShowDialog();
+                if (Result == DialogResult.OK)
+                {
+                    string LoppuValinta = Valitse.ValittuNappi;
+                    if (LoppuValinta == "UusiPeli")
                     {
-                        string LoppuValinta = Valitse.ValittuNappi;
-                        if (LoppuValinta == "UusiPeli")
+                        Application.Restart();
+                    }
+                    else if (LoppuValinta == "Tarkistele")
+                    {
+                        Tarkistelu TarkisteluValinta = new Tarkistelu();
+                        var TarkisteluResult = TarkisteluValinta.ShowDialog();
+                        if (TarkisteluResult == DialogResult.OK)
                         {
-                            Application.Restart();
-                        }
-                        else if (LoppuValinta == "Tarkistele")
-                        {
-                            Tarkistelu TarkisteluValinta = new Tarkistelu();
-                            var TarkisteluResult = TarkisteluValinta.ShowDialog();
-                            if (TarkisteluResult == DialogResult.OK)
+                            string TValinta = TarkisteluValinta.ValittuNappi;
+                            if (TValinta == "Sallittu")
                             {
-                                string TValinta = TarkisteluValinta.ValittuNappi;
-                                if (TValinta == "Sallittu")
-                                {
-                                    
-                                }
-                                else
-                                {
-                                    
-                                }
+
+                            }
+                            else
+                            {
+                                NappiLiikkuminenPeliOhi = true;
                             }
                         }
-                        else
-                        {
-                            Application.Exit();
-                        }
+                    }
+                    else
+                    {
+                        Application.Exit();
                     }
                 }
             }
