@@ -27,7 +27,7 @@ namespace ShakkiProjekti
                 label1.Text = "Voittaja on " + voittaja + " pelaaja";
                 Point Sijainti = new Point(58, 11);
                 label1.Location = Sijainti;
-                TallennusService.Tallennus(ValkoinenPelaaja,MustaPelaaja,Vuorot,"Valkoinen");
+                TallennusService.Tallennus(ValkoinenPelaaja,MustaPelaaja,Vuorot, "Valkoinen");
             }else if(voittaja == "Musta")
             {
                 label1.Text = "Voittaja on " + voittaja + " pelaaja";

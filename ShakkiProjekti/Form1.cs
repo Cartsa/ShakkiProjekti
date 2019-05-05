@@ -43,6 +43,8 @@ namespace ShakkiProjekti
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            NimiForm NimiFormi = new NimiForm();
+            NimiFormi.Show();
             foreach (Button nappi in this.Controls)
             {
                 string tagi = Convert.ToString(nappi.Tag);
@@ -3314,7 +3316,7 @@ namespace ShakkiProjekti
 
                 if (PeliOhi == true)
                 {
-                    Lopetus Valitse = new Lopetus(Voittaja);
+                    Lopetus Valitse = new Lopetus("Pelaaja1", "Pelaaja2", Vuorot, Voittaja);
                     var Result = Valitse.ShowDialog();
                     if (Result == DialogResult.OK)
                     {
