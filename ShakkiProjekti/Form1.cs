@@ -3316,7 +3316,7 @@ namespace ShakkiProjekti
 
                 if (PeliOhi == true)
                 {
-                    Lopetus Valitse = new Lopetus(NimiFormi.MustaPeluri, NimiFormi.ValkoinenPeluri, Vuorot, Voittaja);
+                    Lopetus Valitse = new Lopetus(NimiFormi.ValkoinenPeluri, NimiFormi.MustaPeluri, Vuorot, Voittaja);
                     var Result = Valitse.ShowDialog();
                     if (Result == DialogResult.OK)
                     {

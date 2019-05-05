@@ -26,7 +26,8 @@ namespace ShakkiProjekti
             {
                 label1.Text = "Voittaja on " + ValkoinenPelaaja;
                 TallennusService.Tallennus(ValkoinenPelaaja,MustaPelaaja,Vuorot, "Valkoinen");
-            }else if(voittaja == "Musta")
+            }
+            else if(voittaja == "Musta")
             {
                 label1.Text = "Voittaja on " + MustaPelaaja;
                 TallennusService.Tallennus(ValkoinenPelaaja, MustaPelaaja,Vuorot, "Musta");
