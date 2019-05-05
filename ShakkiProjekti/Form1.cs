@@ -3305,7 +3305,7 @@ namespace ShakkiProjekti
         }
         // Peliohi osuuden koodit on nyt omassa funktiossa ja sillä on voittaja string
         // jonka se saa ku se callataan, voittaja on aina joko Musta tai Valkoinen
-        // ni koodin voi tehä sillee et se suoraan checkkaa if(voittaja == "Musta")
+        // ni koodin voi tehä sillee et se suoraan checkaa if(voittaja == "Musta")
         private void Peliohi(string Voittaja)
         {
             if (Tutkiminen == false)

@@ -76,6 +76,12 @@
     <Compile Include="NappulaValinta.Designer.cs">
       <DependentUpon>NappulaValinta.cs</DependentUpon>
     </Compile>
+    <Compile Include="NimiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NimiForm.Designer.cs">
+      <DependentUpon>NimiForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Poyta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -100,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NappulaValinta.resx">
       <DependentUpon>NappulaValinta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NimiForm.resx">
+      <DependentUpon>NimiForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
