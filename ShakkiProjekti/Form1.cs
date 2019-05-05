@@ -17,6 +17,7 @@ namespace ShakkiProjekti
         int Valittu = 0;
         int Klikit = 0;
         bool PeliOhi = false;
+        bool Tutkiminen = false;
         string ValittuNappi;
         Button klikattuNappi;
         Bitmap MustaSolttu = Properties.Resources.ShakkiSolttu;
@@ -3299,37 +3300,50 @@ namespace ShakkiProjekti
                 Vuorot++;
                 PeliOhi = true;
 
-            if (PeliOhi == true)
+                
+            }
+        }
+        // Peliohi osuuden koodit on nyt omassa funktiossa ja sillä on voittaja string
+        // jonka se saa ku se callataan, voittaja on aina joko Musta tai Valkoinen
+        // ni koodin voi tehä sillee et se suoraan checkkaa if(voittaja == "Musta")
+        private void Peliohi(string Voittaja)
+        {
+            if (Tutkiminen == false)
             {
-                Lopetus Valitse = new Lopetus(Voittaja);
-                var Result = Valitse.ShowDialog();
-                if (Result == DialogResult.OK)
-                {
-                    string LoppuValinta = Valitse.ValittuNappi;
-                    if (LoppuValinta == "UusiPeli")
-                    {
-                        Application.Restart();
-                    }
-                    else if (LoppuValinta == "Tarkistele")
-                    {
-                        Tarkistelu TarkisteluValinta = new Tarkistelu();
-                        var TarkisteluResult = TarkisteluValinta.ShowDialog();
-                        if (TarkisteluResult == DialogResult.OK)
-                        {
-                            string TValinta = TarkisteluValinta.ValittuNappi;
-                            if (TValinta == "Sallittu")
-                            {
+                PeliOhi = true;
 
-                            }
-                            else
+                if (PeliOhi == true)
+                {
+                    Lopetus Valitse = new Lopetus(Voittaja);
+                    var Result = Valitse.ShowDialog();
+                    if (Result == DialogResult.OK)
+                    {
+                        string LoppuValinta = Valitse.ValittuNappi;
+                        if (LoppuValinta == "UusiPeli")
+                        {
+                            Application.Restart();
+                        }
+                        else if (LoppuValinta == "Tarkistele")
+                        {
+                            Tarkistelu TarkisteluValinta = new Tarkistelu();
+                            var TarkisteluResult = TarkisteluValinta.ShowDialog();
+                            if (TarkisteluResult == DialogResult.OK)
                             {
-                                NappiLiikkuminenPeliOhi = true;
+                                string TValinta = TarkisteluValinta.ValittuNappi;
+                                if (TValinta == "Sallittu")
+                                {
+                                    Tutkiminen = true;
+                                }
+                                else
+                                {
+                                    NappiLiikkuminenPeliOhi = true;
+                                }
                             }
                         }
-                    }
-                    else
-                    {
-                        Application.Exit();
+                        else
+                        {
+                            Application.Exit();
+                        }
                     }
                 }
             }
