@@ -3211,7 +3211,6 @@ namespace ShakkiProjekti
                 }
                 Klikit = 0;
                 Vuorot++;
-                PeliOhi = true;
 
                 if (PeliOhi == true)
                 {
