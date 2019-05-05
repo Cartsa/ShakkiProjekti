@@ -12,6 +12,8 @@ namespace ShakkiProjekti
 {
     public partial class NimiForm : Form
     {
+        public string MustaPeluri;
+        public string ValkoinenPeluri;
         public NimiForm()
         {
             InitializeComponent();
@@ -19,7 +21,8 @@ namespace ShakkiProjekti
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            MustaPeluri = textBox1.Text;
+            ValkoinenPeluri = textBox2.Text;
         }
     }
 }

@@ -24,15 +24,11 @@ namespace ShakkiProjekti
             ShakkiService.Service1Client TallennusService = new ShakkiService.Service1Client();
             if (voittaja == "Valkoinen")
             {
-                label1.Text = "Voittaja on " + voittaja + " pelaaja";
-                Point Sijainti = new Point(58, 11);
-                label1.Location = Sijainti;
+                label1.Text = "Voittaja on " + ValkoinenPelaaja;
                 TallennusService.Tallennus(ValkoinenPelaaja,MustaPelaaja,Vuorot, "Valkoinen");
             }else if(voittaja == "Musta")
             {
-                label1.Text = "Voittaja on " + voittaja + " pelaaja";
-                Point Sijainti = new Point(68, 11);
-                label1.Location = Sijainti;
+                label1.Text = "Voittaja on " + MustaPelaaja;
                 TallennusService.Tallennus(ValkoinenPelaaja, MustaPelaaja,Vuorot, "Musta");
             }
 

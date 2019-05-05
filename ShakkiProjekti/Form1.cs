@@ -12,6 +12,7 @@ namespace ShakkiProjekti
 {
     public partial class Form1 : Form
     {
+        public NimiForm NimiFormi = new NimiForm();
         int Vuoro = 0;
         int Vuorot = 0;
         int Valittu = 0;
@@ -43,8 +44,7 @@ namespace ShakkiProjekti
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            NimiForm NimiFormi = new NimiForm();
-            NimiFormi.Show();
+            NimiFormi.ShowDialog();
             foreach (Button nappi in this.Controls)
             {
                 string tagi = Convert.ToString(nappi.Tag);
@@ -3316,7 +3316,7 @@ namespace ShakkiProjekti
 
                 if (PeliOhi == true)
                 {
-                    Lopetus Valitse = new Lopetus("Pelaaja1", "Pelaaja2", Vuorot, Voittaja);
+                    Lopetus Valitse = new Lopetus(NimiFormi.MustaPeluri, NimiFormi.ValkoinenPeluri, Vuorot, Voittaja);
                     var Result = Valitse.ShowDialog();
                     if (Result == DialogResult.OK)
                     {
