@@ -36,9 +36,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(11, 43);
+            this.button1.Location = new System.Drawing.Point(15, 53);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 0;
             this.button1.Text = "Uusi peli";
             this.button1.UseVisualStyleBackColor = true;
@@ -47,17 +48,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(102, 9);
+            this.label1.Location = new System.Drawing.Point(146, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.Size = new System.Drawing.Size(54, 17);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Peli loppui";
+            this.label1.Text = "Peli ohi";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(92, 42);
+            this.button2.Location = new System.Drawing.Point(123, 52);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(100, 28);
             this.button2.TabIndex = 4;
             this.button2.Text = "Tutki";
             this.button2.UseVisualStyleBackColor = true;
@@ -65,9 +68,10 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(173, 42);
+            this.button3.Location = new System.Drawing.Point(231, 52);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(100, 28);
             this.button3.TabIndex = 5;
             this.button3.Text = "Sulje peli";
             this.button3.UseVisualStyleBackColor = true;
@@ -75,13 +79,16 @@
             // 
             // Lopetus
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(259, 77);
+            this.ClientSize = new System.Drawing.Size(345, 95);
+            this.ControlBox = false;
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximizeBox = false;
             this.Name = "Lopetus";
             this.Text = "Lopetus";
             this.ResumeLayout(false);
