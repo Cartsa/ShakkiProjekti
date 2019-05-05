@@ -18,21 +18,24 @@ namespace ShakkiProjekti
             InitializeComponent();
         }
 
-        public Lopetus(string voittaja)
+        public Lopetus(string ValkoinenPelaaja, string MustaPelaaja, int Vuorot, string voittaja)
         {
             InitializeComponent();
-            if(voittaja == "Valkoinen")
+            ShakkiService.Service1Client TallennusService = new ShakkiService.Service1Client();
+            if (voittaja == "Valkoinen")
             {
                 label1.Text = "Voittaja on " + voittaja + " pelaaja";
                 Point Sijainti = new Point(58, 11);
                 label1.Location = Sijainti;
+                TallennusService.Tallennus(ValkoinenPelaaja,MustaPelaaja,Vuorot,"Valkoinen");
             }else if(voittaja == "Musta")
             {
                 label1.Text = "Voittaja on " + voittaja + " pelaaja";
                 Point Sijainti = new Point(68, 11);
                 label1.Location = Sijainti;
+                TallennusService.Tallennus(ValkoinenPelaaja, MustaPelaaja,Vuorot, "Musta");
             }
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)

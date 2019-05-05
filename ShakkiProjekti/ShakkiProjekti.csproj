@@ -122,14 +122,8 @@
     <None Include="Connected Services\ShakkiService\Service1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ShakkiService\Service11.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Connected Services\ShakkiService\Service12.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ShakkiService\ShakkiProjekti.ShakkiService.CompositeType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
