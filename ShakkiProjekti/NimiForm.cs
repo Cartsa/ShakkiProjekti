@@ -23,6 +23,7 @@ namespace ShakkiProjekti
         {
             MustaPeluri = textBox1.Text;
             ValkoinenPeluri = textBox2.Text;
+            this.Close();
         }
     }
 }
